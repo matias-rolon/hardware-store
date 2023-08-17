@@ -1,15 +1,3 @@
-#listas {
-    /* width: 400px; */
-    padding-right: 120%;
-
-}
-
-#listas .col-sm-6 {
-    display: inline-block;
-    width: 50%;
-    padding: 0 15px;
-}
-
 .search {
     width: 500px;
     border-top-left-radius: 10px;
@@ -32,16 +20,4 @@
         color: white;
         cursor: pointer;
       }
-}
-
-@media (max-width: 768px) {
-    #listas {
-        width: auto;
-        padding: 0px;
-        margin-bottom: 10px;
-        grid-template-columns: 1fr;
-    }
-    .search{
-        width: 100%;
-    }
 }
