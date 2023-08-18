@@ -1,3 +1,7 @@
+.navbar{
+    background-color: #c01c24;
+}
+
 .search {
     width: 500px;
     border-top-left-radius: 10px;
@@ -20,4 +24,10 @@
         color: white;
         cursor: pointer;
       }
+}
+
+@media only screen and (max-width: 1140px) {
+    .search{
+        width: 100%;
+    }
 }

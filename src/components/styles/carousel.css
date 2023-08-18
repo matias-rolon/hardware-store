@@ -1,0 +1,18 @@
+.carousel {
+    height: auto;
+    overflow: hidden;
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border: 2px solid white; 
+    border-radius: 100%; 
+    transition: 0.5s;
+    &:hover{
+        border: none;
+        background-color: rgba(255, 0, 0, 1);
+    } 
+}
