@@ -1,16 +1,18 @@
-import './styles/carousel.css'
+import './styles/carousel.css';
 
 export const Carousel = () => {
     return (
-
-        <div id="carouselExampleAutoplaying" className="carousel slide " data-bs-ride="carousel">
+        <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src="https://www.abrafersrl.com.ar/wp-content/uploads/slide-dewalt-abrafer-2-1536x288.jpg" alt="..."/></div>
+                    <img src="https://www.abrafersrl.com.ar/wp-content/uploads/slide-dewalt-abrafer-2-1536x288.jpg" alt="..." className="d-block w-100"/>
+                </div>
                 <div className="carousel-item">
-                    <img src="https://www.abrafersrl.com.ar/wp-content/uploads/slide-bosch-abrafer-categorias-1-1536x288.jpg" className="d-block w-100" alt="..."/></div>
+                    <img src="https://www.abrafersrl.com.ar/wp-content/uploads/slide-bosch-abrafer-categorias-1-1536x288.jpg" className="d-block w-100" alt="..."/>
+                </div>
                 <div className="carousel-item">
-                    <img src="https://www.abrafersrl.com.ar/wp-content/uploads/slide-ezeta-abrafer-1536x288.jpg" className="d-block w-100" alt="..."/></div>
+                    <img src="https://www.abrafersrl.com.ar/wp-content/uploads/slide-ezeta-abrafer-1536x288.jpg" className="d-block w-100" alt="..."/>
+                </div>
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
                 <div className="circle">

@@ -25,3 +25,9 @@
         cursor: pointer;
       }
 }
+
+@media only screen and (max-width: 1140px) {
+    .search{
+        width: 100%;
+    }
+}
