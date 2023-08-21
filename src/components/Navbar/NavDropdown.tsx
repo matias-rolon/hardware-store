@@ -15,16 +15,16 @@ export const NavDropdown = () => {
                     <ul>
                         <h6 className="dropdown-header">Indumentaria</h6>
                         <li>
-                            <a className="dropdown-item" href="#">Mega Menu Link</a>
+                            <a className="dropdown-item" href="#">Gauantes</a>
                         </li>
                         <li>
-                            <a className="dropdown-item" href="#">Mega Menu Link</a>
+                            <a className="dropdown-item" href="#">Delantales</a>
                         </li>
                         <li>
-                            <a className="dropdown-item" href="#">Mega Menu Link</a>
+                            <a className="dropdown-item" href="#">Cascos</a>
                         </li>
                         <li>
-                            <a className="dropdown-item" href="#">Mega Menu Link</a>
+                            <a className="dropdown-item" href="#">Protecciones de seguridad</a>
                         </li>
                     </ul>
                     <ul>
