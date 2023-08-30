@@ -2,6 +2,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 import '../styles/navbar.css';
+
+import { useNavigate } from 'react-router-dom';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import QuestionAnswerOutlinedIcon from '@mui/icons-material/QuestionAnswerOutlined';
 import {NavDropdown} from './NavDropdown';
@@ -9,11 +11,14 @@ import {SearchNav} from './SearchNav';
 
 
 export const Navbar = () => {
+
+    const navigation = useNavigate()
+
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark">
                 <div className="container-fluid">
-                    <div className="navbar-brand-container">
+                    <div className="navbar-brand-container" onClick={ () => navigation('/') }>
                         <a className="navbar-brand logo" href="#">AMK</a>
                         <a className="navbar-brand subtext with-line" href="#">S.R.L</a>
                     </div>
