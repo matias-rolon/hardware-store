@@ -2,25 +2,29 @@ import {ProductCard} from '../components/ProductCard'
 import {Carousel} from '../components/Carousel'
 import {Navbar} from '../components/Navbar/Navbar'
 
+import Productos from "../data/products.json";
+
 import './styles/home.css'
+import { useState } from 'react';
 
 export const Home = () => {
+
+    const [products] = useState(Productos)
+
     return (
         <div className='contain-page'>
             <Navbar/>
             <Carousel/>
-            <div className="productos">
-                <ProductCard img='https://www.abrafersrl.com.ar/wp-content/uploads/F616281-247x247.jpg' price='$32.911,50' title='TACO NYLON BALDE SA 6 + TORNILLOS 4.5X35MM TMF X 1000U'/>
-                <ProductCard img='https://www.abrafersrl.com.ar/wp-content/uploads/F616281-247x247.jpg' price='$32.911,50' title='TACO NYLON BALDE SA 6 + TORNILLOS 4.5X35MM TMF X 1000U'/>
-                <ProductCard img='https://www.abrafersrl.com.ar/wp-content/uploads/F616281-247x247.jpg' price='$32.911,50' title='TACO NYLON BALDE SA 6 + TORNILLOS 4.5X35MM TMF X 1000U'/>
-                <ProductCard img='https://www.abrafersrl.com.ar/wp-content/uploads/F616281-247x247.jpg' price='$32.911,50' title='TACO NYLON BALDE SA 6 + TORNILLOS 4.5X35MM TMF X 1000U'/>
-                <ProductCard img='https://www.abrafersrl.com.ar/wp-content/uploads/F616281-247x247.jpg' price='$32.911,50' title='TACO NYLON BALDE SA 6 + TORNILLOS 4.5X35MM TMF X 1000U'/>
-                <ProductCard img='https://www.abrafersrl.com.ar/wp-content/uploads/F616281-247x247.jpg' price='$32.911,50' title='TACO NYLON BALDE SA 6 + TORNILLOS 4.5X35MM TMF X 1000U'/>
-                <ProductCard img='https://www.abrafersrl.com.ar/wp-content/uploads/F616281-247x247.jpg' price='$32.911,50' title='TACO NYLON BALDE SA 6 + TORNILLOS 4.5X35MM TMF X 1000U'/>
-                <ProductCard img='https://www.abrafersrl.com.ar/wp-content/uploads/F616281-247x247.jpg' price='$32.911,50' title='TACO NYLON BALDE SA 6 + TORNILLOS 4.5X35MM TMF X 1000U'/>
-                <ProductCard img='https://www.abrafersrl.com.ar/wp-content/uploads/F616281-247x247.jpg' price='$32.911,50' title='TACO NYLON BALDE SA 6 + TORNILLOS 4.5X35MM TMF X 1000U'/>
-                <ProductCard img='https://www.abrafersrl.com.ar/wp-content/uploads/F616281-247x247.jpg' price='$32.911,50' title='TACO NYLON BALDE SA 6 + TORNILLOS 4.5X35MM TMF X 1000U'/>
-                <ProductCard img='https://www.abrafersrl.com.ar/wp-content/uploads/F616281-247x247.jpg' price='$32.911,50' title='TACO NYLON BALDE SA 6 + TORNILLOS 4.5X35MM TMF X 1000U'/>
+            <div className="productos">                
+                {
+                    products.map( producto => (
+                        <ProductCard 
+                            price={producto.precio} 
+                            img={producto.imagenes[0]} 
+                            title={producto.nombre} 
+                        />
+                    ) )
+                }
             </div>
 
         </div>

@@ -4,7 +4,7 @@ import './styles/productCard.css'
 interface Props {
     img: string;
     title: string;
-    price: string
+    price: number
 }
 
 export const ProductCard = ({img, price, title}:Props) => {
@@ -20,7 +20,7 @@ export const ProductCard = ({img, price, title}:Props) => {
                 <div className="contain-title">
                     <span>{title}</span>
                 </div>
-                <span className='price'>{price}</span>
+                <span className='price'>${price}</span>
                 <button className='product-button'>COMPRAR</button>
             </div>
         </>
