@@ -1,8 +1,9 @@
 import {Navbar} from "../components/Navbar/Navbar"
 
 import './styles/infoProduct.css'
-import { TableDetailsProduct } from '../components/TableDetailsProduct';
-import { useState } from "react";
+import {TableDetailsProduct} from '../components/TableDetailsProduct';
+import {useState} from "react";
+import {ImageSelector} from '../components/ImageSelector';
 
 export const InfoProduct = () => {
 
@@ -22,16 +23,19 @@ export const InfoProduct = () => {
         {
             name: "Modelo",
             details: "Taladro Impacto GSB 550 RE STD 550W 220V"
-        },
-        {
+        }, {
             name: "Origen",
             details: "Brasil"
-        },
-        {
+        }, {
             name: "Fabricante",
             details: "3M"
         }
     ])
+
+
+    const images = ["https://http2.mlstatic.com/D_NQ_NP_889029-MLA71032613845_082023-O.webp", "https://http2.mlstatic.com/D_NQ_NP_855677-MLA70996248324_082023-O.webp", "https://http2.mlstatic.com/D_NQ_NP_728534-MLA71032751753_082023-O.webp",  "https://http2.mlstatic.com/D_NQ_NP_889029-MLA71032613845_082023-O.webp",
+            "https://http2.mlstatic.com/D_NQ_NP_855677-MLA70996248324_082023-O.webp",
+            "https://http2.mlstatic.com/D_NQ_NP_728534-MLA71032751753_082023-O.webp"];
 
     return (
         <>
@@ -39,9 +43,7 @@ export const InfoProduct = () => {
             <div className="contain-product">
                 <div className="product-info-card">
                     <div className="detail-container">
-                        <div className="contain-image-product">
-                            <img className='product-info-image' src="https://www.abrafersrl.com.ar/wp-content/uploads/25091-247x247.jpg" alt=""/>
-                        </div>
+                        <ImageSelector images={images}/>
                         <div className="detials-product">
                             <h1 className="title-product">TACO NYLON BALDE SA 6 + TORNILLOS 4.5X35MM TMF X 1000U</h1>
                             <p>De:
@@ -64,7 +66,7 @@ export const InfoProduct = () => {
                         </div>
                     </div>
                     <span className="description-title">Detalles del producto</span>
-                    <TableDetailsProduct sectionDetails={first} />
+                    <TableDetailsProduct sectionDetails={first}/>
                 </div>
 
             </div>
