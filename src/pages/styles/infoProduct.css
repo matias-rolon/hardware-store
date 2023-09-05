@@ -61,10 +61,12 @@
     cursor: pointer;
     background-color: transparent;
     border: 1px solid grey;
-    border-radius: 5px 0px 0px 5px;
+    border-right: none;
+    border-radius: 100px 0px 0px 100px;
     color: black;
     font-size: 25px;
-    width: 30px;
+    width: 50px;
+    transition: 0.3s;
     &:hover {
         background-color: rgba(0, 0, 0, 0.1);
     }
@@ -80,7 +82,7 @@
     font-size: 25px;
     padding-top: 5px;   
     text-align: center;
-    width: 40px;
+    width: 30px;
 }
 
 
@@ -88,11 +90,12 @@
     cursor: pointer;
     background-color: transparent;
     border: 1px solid grey;
-    border-radius: 0px 5px 5px 0px;
+    border-left: none;
+    border-radius: 0px 100px 100px 0px;
     color: black;
     font-size: 25px;
-    width: 30px;
-
+    width: 50px;
+    transition: 0.3s;
     &:hover {
         background-color: rgba(0, 0, 0, 0.1);
     }
@@ -101,7 +104,7 @@
 
 .button-buy {
     margin-left: 10px;
-    border-radius: 5px;
+    border-radius: 100px;
     padding: 15px 20px;
     background-color: #c01c24;
     border: none;

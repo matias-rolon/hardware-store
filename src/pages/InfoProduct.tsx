@@ -1,8 +1,38 @@
 import {Navbar} from "../components/Navbar/Navbar"
 
 import './styles/infoProduct.css'
+import { TableDetailsProduct } from '../components/TableDetailsProduct';
+import { useState } from "react";
 
 export const InfoProduct = () => {
+
+    const [first] = useState([
+        {
+            name: "Tipo de producto",
+            details: "Destornilladores para golpe"
+        },
+        {
+            name: "Contenido",
+            details: "3 destornilladores planos y 3 destornilladores philiips"
+        },
+        {
+            name: "Certificación",
+            details: "Norma IRAM 4126-1:99 Certificado N° 00411-1-1PROP emitido por el CIN  TRA"
+        },
+        {
+            name: "Modelo",
+            details: "Taladro Impacto GSB 550 RE STD 550W 220V"
+        },
+        {
+            name: "Origen",
+            details: "Brasil"
+        },
+        {
+            name: "Fabricante",
+            details: "3M"
+        }
+    ])
+
     return (
         <>
             <Navbar/>
@@ -13,19 +43,28 @@ export const InfoProduct = () => {
                             <img className='product-info-image' src="https://www.abrafersrl.com.ar/wp-content/uploads/25091-247x247.jpg" alt=""/>
                         </div>
                         <div className="detials-product">
-                            <span className="title-product">TACO NYLON BALDE SA 6 + TORNILLOS 4.5X35MM TMF X 1000U</span>
+                            <h1 className="title-product">TACO NYLON BALDE SA 6 + TORNILLOS 4.5X35MM TMF X 1000U</h1>
+                            <p>De:
+                                <a href="/">Ferreteria Los Hermanos</a>
+                            </p>
+                            <p>Disponibe en:
+                                <b>1 día</b>
+                            </p>
                             <span className="price-product">$34.316,31</span>
                             <div className="buttonsContainer">
-                                <button className="buttonMinus" > - </button>
+                                <button className="buttonMinus">
+                                    -
+                                </button>
                                 <div className="countLabel">1</div>
-                                <button className="buttonAdd"> + </button>
-                                <button className="button-buy">Comprar</button>
-                             </div>
+                                <button className="buttonAdd">
+                                    +
+                                </button>
+                            </div>
+                            <button className="button-buy">AÑADIR AL CARRITO DE COMPRA</button>
                         </div>
                     </div>
-                    <span className="description-title">Descipción</span>
-                    <p className="description-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus aliquam laborum non molestiae incidunt adipisci officia, culpa velit deleniti quaerat, nulla architecto, tenetur amet modi cumque aliquid similique placeat itaque. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam exercitationem aspernatur ipsam laboriosam vitae explicabo, sequi animi quidem quia omnis dolore nihil fugiat earum consequuntur facilis, recusandae beatae laudantium eligendi. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod, eius nulla. Possimus numquam accusamus iure quam itaque modi, odio consectetur repellendus, sunt aliquam consequuntur ullam saepe? Doloremque corporis quidem amet!</p>
-
+                    <span className="description-title">Detalles del producto</span>
+                    <TableDetailsProduct sectionDetails={first} />
                 </div>
 
             </div>
