@@ -1,5 +1,5 @@
 .navbar{
-    background-color: #c01c24;
+    background-color: #ffff;
     overflow: hidden;
 }
 
@@ -30,9 +30,9 @@
 
 .logo {
     font-size: 30px;
-    font-weight: 1000; 
+    font-weight: 600; 
     font-style: italic;
-    transform: skewX(-15deg);
+    text-decoration: underline;
 }
 
 .navbar-brand-container {
@@ -43,34 +43,23 @@
 
 .navbar-brand.logo {
     font-size: 30px;
+    color: #4b71be;
 }
 
 .navbar-brand.subtext {
+    color: #4b71be;
     font-weight: 600; 
     font-style: italic;
-    transform: skewX(-15deg);
-    font-size: 15px; 
+    font-size: 10px; 
     display: flex;
     align-items: center;
-    margin-top: -25px;
+    margin-top: -15px;
     position: relative;
 }
 
-.navbar-brand.subtext::before {
-    content: "";
-    height: 5px;
-    width: 45px;
-    border-top-left-radius: 500px;
-    border-bottom-right-radius: 500px;
-    margin-right: 4px;
-    background-color: #fff;
-    display: block;
-}
-
 .sections{
-    border-top: solid #222222 1px;
     height: 60px;
-    background-color: #c01c24;
+    background-color: #ffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,21 +69,26 @@
 
 .icon-help{
     cursor: pointer;
-    color: #fff;
+    color: #444444;
     margin: 10px;
     height: 100px;
     width: 100px;
     margin-right: 100px;
     display: flex;
+    &:hover {
+        color: #4b71be;
+    }
 }
 
 .icon-shop{
     cursor: pointer;
-    color: #fff;
+    color: #444444;
     margin: 10px;
     height: 100px;
     display: flex;
-
+    &:hover {
+        color: #4b71be;
+    }
 }
 
 @media only screen and (max-width: 991px) {
