@@ -18,7 +18,8 @@ export const Home = () => {
             <div className="productos">                
                 {
                     products.map( producto => (
-                        <ProductCard 
+                        <ProductCard
+                            key={producto.nombre}
                             price={producto.precio} 
                             img={producto.imagenes[0]} 
                             title={producto.nombre} 

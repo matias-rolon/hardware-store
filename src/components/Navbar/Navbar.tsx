@@ -20,7 +20,7 @@ export const Navbar = () => {
                 <div className="container-fluid">
                     <div className="navbar-brand-container" onClick={ () => navigation('/') }>
                         <a className="navbar-brand logo" href="#">AMK SRL</a>
-                        <a className="navbar-brand subtext with-line" href="#">FERRETERIA Y SEGURIDAD INDUSTRIAL</a>
+                        <p className="navbar-brand subtext with-line">FERRETERIA Y SEGURIDAD INDUSTRIAL</p>
                     </div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -34,7 +34,7 @@ export const Navbar = () => {
                         </ul>
                         <SearchNav/>
                         <ShoppingCartOutlinedIcon className='icon-shop'/>
-                        <BookmarkBorderIcon className='icon-help' />
+                        <BookmarkBorderIcon className='icon-favorites' />
                     </div>
                 </div>
             </nav>
