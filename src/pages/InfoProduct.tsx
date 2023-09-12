@@ -62,7 +62,8 @@ export const InfoProduct = () => {
                                     +
                                 </button>
                             </div>
-                            <button className="button-buy">AÑADIR AL CARRITO DE COMPRA</button>
+                            <button className="button-buy">AÑADIR AL CARRITO</button>
+                            <button className="button-favorite">GUARDAR EN FAVORITOS</button>
                         </div>
                     </div>
                     <span className="description-title">Detalles del producto</span>
