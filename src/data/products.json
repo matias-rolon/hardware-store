@@ -8,7 +8,30 @@
             "https://http2.mlstatic.com/D_NQ_NP_855677-MLA70996248324_082023-O.webp",
             "https://http2.mlstatic.com/D_NQ_NP_728534-MLA71032751753_082023-O.webp"
         ],
-        "descripcion": "Martillo de acero resistente para trabajos de construcción y carpintería."
+        "descripcion": [
+            {
+                "name": "Tipo de producto",
+                "details": "Destornilladores para golpe"
+            },
+            {
+                "name": "Contenido",
+                "details": "3 destornilladores planos y 3 destornilladores philiips"
+            },
+            {
+                "name": "Certificación",
+                "details": "Norma IRAM 4126-1:99 Certificado N° 00411-1-1PROP emitido por el CIN  TRA"
+            },
+            {
+                "name": "Modelo",
+                "details": "Taladro Impacto GSB 550 RE STD 550W 220V"
+            }, {
+                "name": "Origen",
+                "details": "Brasil"
+            }, {
+                "name": "Fabricante",
+                "details": "3M"
+            }
+        ]
     },
     {
         "id": 2,
@@ -17,24 +40,35 @@
         "imagenes": [
             "https://http2.mlstatic.com/D_NQ_NP_715809-MLA46082506451_052021-O.webp",
             "https://http2.mlstatic.com/D_NQ_NP_775560-MLA46082514464_052021-O.webp",
-            "https://http2.mlstatic.com/D_NQ_NP_663833-MLA48932696631_012022-O.webp"
+            "https://static.vecteezy.com/system/resources/thumbnails/018/990/688/small/3d-black-rough-grunge-techno-abstract-background-overlap-layer-on-dark-space-with-red-lines-decoration-modern-graphic-design-element-cutout-style-concept-for-banner-flyer-card-or-brochure-cover-vector.jpg"
         ],
-        "descripcion": "Destornillador de punta plana con mango ergonómico para un mejor agarre."
+        "descripcion": [
+            {
+                "name": "Tipo de producto",
+                "details": "Destornilladores para golpe"
+            },
+            {
+                "name": "Contenido",
+                "details": "3 destornilladores planos y 3 destornilladores philiips"
+            },
+            {
+                "name": "Certificación",
+                "details": "Norma IRAM 4126-1:99 Certificado N° 00411-1-1PROP emitido por el CIN  TRA"
+            },
+            {
+                "name": "Modelo",
+                "details": "Taladro Impacto GSB 550 RE STD 550W 220V"
+            }, {
+                "name": "Origen",
+                "details": "Brasil"
+            }, {
+                "name": "Fabricante",
+                "details": "3M"
+            }
+        ]
     },
     {
         "id": 3,
-        "nombre": "Sierra Circular 7-1/4 20v Sin Batería Dewalt Dcs570b Color Amarillo",
-        "precio": 89.99,
-        "imagenes": [
-            "https://http2.mlstatic.com/D_NQ_NP_956594-MLU70306403199_072023-O.webp",
-            "https://http2.mlstatic.com/D_NQ_NP_703150-MLU70306403201_072023-O.webp",
-            "https://http2.mlstatic.com/D_NQ_NP_809730-MLU70306403203_072023-O.webp",
-            "https://http2.mlstatic.com/D_NQ_NP_845033-MLU70306403211_072023-O.webp"
-        ],
-        "descripcion": "Sierra circular eléctrica para cortes precisos en madera, plástico y metal."
-    },
-    {
-        "id": 4,
         "nombre": "Kit Set X3 De Pinza Universal Y Alicate Reforzadas Aislada",
         "precio": 89.99,
         "imagenes": [
@@ -43,6 +77,29 @@
             "https://http2.mlstatic.com/D_NQ_NP_946883-MLA53475680104_012023-O.webp",
             "https://http2.mlstatic.com/D_NQ_NP_900743-MLA53475525868_012023-O.webp"
         ],
-        "descripcion": "Sierra circular eléctrica para cortes precisos en madera, plástico y metal."
+        "descripcion": [
+            {
+                "name": "Tipo de producto",
+                "details": "Destornilladores para golpe"
+            },
+            {
+                "name": "Contenido",
+                "details": "3 destornilladores planos y 3 destornilladores philiips"
+            },
+            {
+                "name": "Certificación",
+                "details": "Norma IRAM 4126-1:99 Certificado N° 00411-1-1PROP emitido por el CIN  TRA"
+            },
+            {
+                "name": "Modelo",
+                "details": "Taladro Impacto GSB 550 RE STD 550W 220V"
+            }, {
+                "name": "Origen",
+                "details": "Brasil"
+            }, {
+                "name": "Fabricante",
+                "details": "3M"
+            }
+        ]
     }
 ]

@@ -1,7 +1,6 @@
 .contain-imageSelect {
-    height: 400px;
+    height: 300px;
     width: 500px;
-    width: 100%;
     overflow: hidden;
     cursor: pointer;
     display: flex;
@@ -27,9 +26,18 @@
     margin: 10px;
     border: solid 2px #bfbfbf;
     border-radius: 10px;
+    object-fit: cover;
+    
 
     &:hover{
         border: solid 2px #3483fa;
         border-radius: 10px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .contain-imageSelect {
+        height: 300px;
+        width: 100%;
     }
 }

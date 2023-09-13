@@ -2,11 +2,11 @@ import { useState } from "react";
 import './styles/imageSelector.css'
 
 interface Props {
-    images: string[];
+    images?: string[];
 }
 
 export const ImageSelector = ({ images }: Props) => {
-  const [selectedImage, setSelectedImage] = useState(images[0]);
+  const [selectedImage, setSelectedImage] = useState(images ? images[0] : '');
     
   return (
     <div>
@@ -17,10 +17,9 @@ export const ImageSelector = ({ images }: Props) => {
                 height="100%"
                 className="imageSelect"
             />
-
         </div>
         <div className="contain-thumbnail">        
-            {images.map((image, index) => (
+            {images?.map((image, index) => (
                 <img
                 key={index}
                 src={image}

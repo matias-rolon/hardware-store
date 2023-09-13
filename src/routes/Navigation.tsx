@@ -7,7 +7,7 @@ export const Navigation = () => {
         <BrowserRouter>
             <Routes>
                 <Route path="*" element={<Home/>}/>
-                <Route path="/infoProduct" element={<InfoProduct/>}/>
+                <Route path="/product/:productId" element={<InfoProduct/>}/>
             </Routes>
         </BrowserRouter>
     );

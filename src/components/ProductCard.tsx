@@ -13,7 +13,7 @@ export const ProductCard = ({img, price, title}:Props) => {
 
     return (
         <>
-            <div className='product-card' onClick={ () => navigation('/infoProduct') }>
+            <div className='product-card' onClick={ () => navigation(`/product/${title}`) }>
                 <div className="contain-image">
                     <img className='product-image' src={img} alt=""/>
                 </div>
