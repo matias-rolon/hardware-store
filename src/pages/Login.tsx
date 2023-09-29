@@ -14,7 +14,7 @@ export const Login = () => {
         e.preventDefault();
 
         if (password === passwordAdmin && email === emailAdmin) {
-            navigation('/');
+            navigation('/back-office');
         } else {
             alert("Las contraseñas y el correo electrónico no coinciden");
         }

@@ -1,0 +1,16 @@
+.navbar-toggler{
+    margin: 10px;
+}
+
+.contain-logo {
+    margin-left: 315%;
+    margin-top: -65px;
+    margin-bottom: -28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item-navbar {
+    color: black;
+}
