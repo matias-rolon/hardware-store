@@ -122,7 +122,7 @@
     --formGap: 0.875rem;
   }
   
-  input {
+  .input-login {
     background-image: none;
     border: 0;
     color: inherit;
@@ -133,7 +133,7 @@
     transition: background-color 0.3s;
   }
   
-  input[type="submit"] {
+  .input-login[type="submit"] {
     cursor: pointer;
   }
   
@@ -142,9 +142,9 @@
     gap: var(--formGap);
   }
   
-  .form input[type="password"],
-  .form input[type="text"],
-  .form input[type="submit"] {
+  .form .input-login[type="password"],
+  .form .input-login[type="text"],
+  .form .input-login[type="submit"] {
     inline-size: 100%;
   }
   
@@ -177,9 +177,9 @@
   }
   
   .login label,
-  .login input[type="text"],
-  .login input[type="password"],
-  .login input[type="submit"] {
+  .login .input-login[type="text"],
+  .login .input-login[type="password"],
+  .login .input-login[type="submit"] {
     border-radius: var(--loginBorderRadus);
     padding: 1rem;
   }
@@ -191,29 +191,29 @@
     padding-inline: 1.25rem;
   }
   
-  .login input[type="password"],
-  .login input[type="text"] {
+  .login .input-login[type="password"],
+  .login .input-login[type="text"] {
     background-color: var(--loginInputBackgroundColor);
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
   }
   
-  .login input[type="password"]:focus,
-  .login input[type="password"]:hover,
-  .login input[type="text"]:focus,
-  .login input[type="text"]:hover {
+  .login .input-login[type="password"]:focus,
+  .login .input-login[type="password"]:hover,
+  .login .input-login[type="text"]:focus,
+  .login .input-login[type="text"]:hover {
     background-color: var(--loginInputHoverBackgroundColor);
   }
   
-  .login input[type="submit"] {
+  .login .input-login[type="submit"] {
     background-color: var(--loginSubmitBackgroundColor);
     color: var(--loginSubmitColor);
     font-weight: 700;
     text-transform: uppercase;
   }
   
-  .login input[type="submit"]:focus,
-  .login input[type="submit"]:hover {
+  .login .input-login[type="submit"]:focus,
+  .login .input-login[type="submit"]:hover {
     background-color: var(--loginSubmitHoverBackgroundColor);
   }
   

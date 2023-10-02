@@ -37,7 +37,7 @@ export const Login = () => {
                                 </svg>
                                 <span className="hidden">Username</span>
                             </label>
-                            <input id="login__username" type="text" name="username" className="form__input" placeholder="Username" required
+                            <input id="login__username" type="text" name="username" className="form__input input-login" placeholder="Username" required
                                 onChange={
                                     (e) => setEmail(e.target.value)
                                 }/>
@@ -49,13 +49,13 @@ export const Login = () => {
                                 </svg>
                                 <span className="hidden">Password</span>
                             </label>
-                            <input id="login__password" type="password" name="password" className="form__input" placeholder="Password" required
+                            <input id="login__password" type="password" name="password" className="form__input input-login" placeholder="Password" required
                                 onChange={
                                     (e) => setPassword(e.target.value)
                                 }/>
                         </div>
                         <div className="form__field">
-                            <input type="submit" value="Sign In"/>
+                            <input className='input-login' type="submit" value="Sign In"/>
                         </div>
                     </form>
                 </div>

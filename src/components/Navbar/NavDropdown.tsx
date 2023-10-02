@@ -21,13 +21,13 @@ export const NavDropdown = ({name, dropdown}: Props) => {
 
     return (
         <>
-            <li className="nav-item dropdown">
-                <a  className={`nav-link ${dropdown ? 'dropdown-toggle' : ''}`} href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <li className="nav-item nav-item-nav dropdown dropdown-nav">
+                <a  className={`nav-link nav-link-nav ${dropdown ? 'dropdown-toggle' : ''}`} href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     {name}
                 </a>
                 {
                     dropdown ? 
-                        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <div className="dropdown-menu dropdown-menu-nav" aria-labelledby="navbarDropdown">
                         {
                             dropdown.map( dropdown => (
                                 <ul>
@@ -35,7 +35,7 @@ export const NavDropdown = ({name, dropdown}: Props) => {
                                         {
                                             dropdown.itemSection.map( item => (
                                                 <li>
-                                                    <a className="dropdown-item" href={item.url}>{item.nameItem}</a>
+                                                    <a className="dropdown-item dropdown-item-nav" href={item.url}>{item.nameItem}</a>
                                                 </li>
                                             ) )
                                         }
