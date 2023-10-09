@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { EditImage } from './EditImage';
+import { EditImage } from './EditImage/EditImage';
 
 
 interface Props {
