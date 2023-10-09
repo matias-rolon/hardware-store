@@ -16,7 +16,12 @@ export const ProductsBackOffice = () => {
             category: 'honda',
             deliveryTime: 'dias-recibida',
             time:13,
-            state: 'activo'
+            state: 'activo',
+            images: [
+                "https://http2.mlstatic.com/D_NQ_NP_889029-MLA71032613845_082023-O.webp",
+                "https://http2.mlstatic.com/D_NQ_NP_855677-MLA70996248324_082023-O.webp",
+                "https://http2.mlstatic.com/D_NQ_NP_728534-MLA71032751753_082023-O.webp"
+            ],
         },
         {
             id: 2,
@@ -25,7 +30,12 @@ export const ProductsBackOffice = () => {
             stock: 230,
             category: 'Herramientas eléctricas',
             deliveryTime: 'entrega',
-            state: 'sin-stock'
+            state: 'sin-stock',
+            images: [
+                "https://http2.mlstatic.com/D_NQ_NP_715809-MLA46082506451_052021-O.webp",
+                "https://http2.mlstatic.com/D_NQ_NP_775560-MLA46082514464_052021-O.webp",
+                "https://static.vecteezy.com/system/resources/thumbnails/018/990/688/small/3d-black-rough-grunge-techno-abstract-background-overlap-layer-on-dark-space-with-red-lines-decoration-modern-graphic-design-element-cutout-style-concept-for-banner-flyer-card-or-brochure-cover-vector.jpg"
+            ],
         },
         {
             id: 3,
@@ -34,7 +44,14 @@ export const ProductsBackOffice = () => {
             stock: 230,
             category: 'Herramientas eléctricas',
             deliveryTime: 'consultar',
-            state: 'en-pausa'
+            state: 'en-pausa',
+            images: [
+                "https://http2.mlstatic.com/D_NQ_NP_978385-MLA53475628237_012023-O.webp",
+                "https://http2.mlstatic.com/D_NQ_NP_698849-MLA53475610336_012023-O.webp",
+                "https://http2.mlstatic.com/D_NQ_NP_946883-MLA53475680104_012023-O.webp",
+                "https://http2.mlstatic.com/D_NQ_NP_900743-MLA53475525868_012023-O.webp",
+                
+            ],
         },
     ])
 
@@ -82,10 +99,6 @@ export const ProductsBackOffice = () => {
                     </div>
                 </div>
                 {
-                // products.map((product) => (
-                //     <ProductBackOffice product={product} 
-                //     onUpdateProduct={(updatedProduct: any) => updateProduct(product.id, updatedProduct)}/>
-                // ))
 
                 products.map( product => {
                     return <ProductBackOffice 

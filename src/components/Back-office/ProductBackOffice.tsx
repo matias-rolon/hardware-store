@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { EditImage } from './EditImage';
 
 
 interface Props {
@@ -16,6 +17,7 @@ export interface Product {
     deliveryTime: string;
     time?: number;
     state: string;
+    images: string[];
 }
 
 export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
@@ -28,7 +30,8 @@ export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
         price,
         stock,
         category,
-        state
+        state,
+        images
     } = product
 
     const [mostrarInput, setMostrarInput] = useState(deliveryTime === 'dias-recibida');
@@ -51,6 +54,15 @@ export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
         };
         onUpdateProduct(id, updatedProduct);
     }
+
+    const handleUpdateImages = (updatedImages: string[]) => {
+        // Actualiza el array de imágenes en el producto
+        const updatedProduct = {
+          ...product,
+          images: updatedImages,
+        };
+        onUpdateProduct(id, updatedProduct);
+      };
 
 
     return (
@@ -121,7 +133,7 @@ export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
                             <a className="dropdown-item dropdown-config" href="#">Editar descripcion</a>
                         </li>
                         <li>
-                            <a className="dropdown-item dropdown-config" href="#">Editar imagenes</a>
+                            <EditImage images={images} onUpdateImages={handleUpdateImages}/>
                         </li>
                     </ul>
                 </div>
