@@ -14,8 +14,8 @@ export function useEditImage(images: string[], onUpdateImages: (updatedImages: s
   const handleShow = () => setShow(true);
   const handleCloseDelete = () => setShowDelete(false);
   const handleShowDelete = (index: number) => {
-    setShowDelete(true);
     setImageToDeleteIndex(index);
+    setShowDelete(true);
   };
 
   const handleEditImage = (index: number, newImageUrl: string) => {

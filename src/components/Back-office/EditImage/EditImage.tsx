@@ -18,12 +18,12 @@ export const EditImage = ({images, onUpdateImages} : Props) => {
         showEditModal,
         handleClose,
         handleShow,
-        handleCloseDelete,
         handleShowDelete,
         handleEditImage,
         handleDeleteImage,
         handleSaveChanges,
-        setShowEditModal
+        setShowEditModal,
+        handleCloseDelete
     } = useEditImage(images, onUpdateImages);
 
     return (
@@ -44,15 +44,21 @@ export const EditImage = ({images, onUpdateImages} : Props) => {
                     <div className='contain-images'>
                         {
                         editedImages.map((image, index) => (
-                            <ImageItem key={index}
-                                image={image}
-                                showEditModal={ showEditModal[index] }
-                                handleShowDelete={ () => handleShowDelete(index) }
-                                handleEditImage={ (value) => handleEditImage(index, value) }
-                                handleShowEditModal={
-                                    () => setShowEditModal((prevState) => prevState.map((val, i) => (i === index ? !val : val)))
-                                }
-                                index={index}/>
+                          <ImageItem
+                key={index}
+                image={image}
+                showEditModal={showEditModal[index]}
+                showDeleteModal={showDelete}
+                handleShowDelete={() => handleShowDelete(index)}
+                handleDeleteImage={() => handleDeleteImage()}
+                handleEditImage={(value) => handleEditImage(index, value)}
+                handleShowEditModal={() =>
+                  setShowEditModal((prevState) =>
+                    prevState.map((val, i) => (i === index ? !val : val))
+                  )
+                }
+                handleCloseDelete={handleCloseDelete}
+                index={index}/>
                         ))
                     } </div>
                 </Modal.Body>
@@ -65,27 +71,6 @@ export const EditImage = ({images, onUpdateImages} : Props) => {
                     <Button variant='primary'
                         onClick={handleSaveChanges}>
                         Guardar
-                    </Button>
-                </Modal.Footer>
-            </Modal>
-
-            <Modal show={showDelete}
-                onHide={handleCloseDelete}
-                centered
-                backdrop='static'
-                keyboard={false}>
-                <Modal.Body>
-                    ¿Está seguro que desea eliminar esta imagen?
-                </Modal.Body>
-
-                <Modal.Footer>
-                    <Button variant='secondary'
-                        onClick={handleCloseDelete}>
-                        No
-                    </Button>
-                    <Button variant='primary'
-                        onClick={handleDeleteImage}>
-                        Sí
                     </Button>
                 </Modal.Footer>
             </Modal>

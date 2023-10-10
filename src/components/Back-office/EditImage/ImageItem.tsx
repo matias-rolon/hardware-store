@@ -1,11 +1,15 @@
 import {Button, Modal} from "react-bootstrap";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import {ModalEdit} from './ModalEdit';
 
 interface Props {
     image: string;
     showEditModal: boolean;
+    showDeleteModal: boolean;
     handleShowDelete: () => void;
+    handleCloseDelete: () => void;
+    handleDeleteImage: () => void;
     handleEditImage: (value : string) => void;
     handleShowEditModal: () => void;
     index: number;
@@ -14,9 +18,12 @@ interface Props {
 export const ImageItem = ({
     image,
     showEditModal,
+    showDeleteModal,
     handleShowDelete,
+    handleDeleteImage,
     handleEditImage,
     handleShowEditModal,
+    handleCloseDelete
 
 } : Props) => {
     return (
@@ -33,27 +40,29 @@ export const ImageItem = ({
                 className='image-edit'
                 alt=''/>
 
-            <Modal show={showEditModal}
-                onHide={handleShowEditModal}
+            <ModalEdit handleEditImage={handleEditImage}
+                handleShowEditModal={handleShowEditModal}
+                image={image}
+                showEditModal={showEditModal}/>
+
+
+            <Modal show={showDeleteModal}
+                onHide={handleShowDelete}
                 centered
                 backdrop='static'
                 keyboard={false}>
                 <Modal.Body>
-                    <input type='text' className='input-image'
-                        defaultValue={image}
-                        onChange={
-                            (e) => handleEditImage(e.target.value)
-                        }/>
+                    ¿Está seguro que desea eliminar esta imagen?
                 </Modal.Body>
 
                 <Modal.Footer>
                     <Button variant='secondary'
-                        onClick={handleShowEditModal}>
-                        Cerrar
+                        onClick={handleCloseDelete}>
+                        No
                     </Button>
                     <Button variant='primary'
-                        onClick={handleShowEditModal}>
-                        Actualizar
+                        onClick={handleDeleteImage}>
+                        Sí
                     </Button>
                 </Modal.Footer>
             </Modal>
