@@ -1,7 +1,7 @@
-import {Button, Modal} from "react-bootstrap";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import {ModalEdit} from './ModalEdit';
+import { ModalDelete } from './ModalDelete';
 
 interface Props {
     image: string;
@@ -45,27 +45,8 @@ export const ImageItem = ({
                 image={image}
                 showEditModal={showEditModal}/>
 
+            <ModalDelete handleCloseDelete={handleCloseDelete} handleDeleteImage={handleDeleteImage} handleShowDelete={handleShowDelete} showDeleteModal={showDeleteModal} />
 
-            <Modal show={showDeleteModal}
-                onHide={handleShowDelete}
-                centered
-                backdrop='static'
-                keyboard={false}>
-                <Modal.Body>
-                    ¿Está seguro que desea eliminar esta imagen?
-                </Modal.Body>
-
-                <Modal.Footer>
-                    <Button variant='secondary'
-                        onClick={handleCloseDelete}>
-                        No
-                    </Button>
-                    <Button variant='primary'
-                        onClick={handleDeleteImage}>
-                        Sí
-                    </Button>
-                </Modal.Footer>
-            </Modal>
         </div>
     )
 }
