@@ -2,6 +2,7 @@ export interface EditImageHooks {
     show: boolean;
     setShow: React.Dispatch<React.SetStateAction<boolean>>;
     showDelete: boolean;
+    showAdd: boolean
     setShowDelete: React.Dispatch<React.SetStateAction<boolean>>;
     editedImages: string[];
     setEditedImages: React.Dispatch<React.SetStateAction<string[]>>;
@@ -16,5 +17,9 @@ export interface EditImageHooks {
     handleEditImage: (index: number, newImageUrl: string) => void;
     handleDeleteImage: () => void;
     handleSaveChanges: () => void;
+    handleAddImage: (e:any) => void;
+    addImage: () => void;
+    handleCloseAdd: () => void;
+    handleShowAdd : () => void;
   }
   

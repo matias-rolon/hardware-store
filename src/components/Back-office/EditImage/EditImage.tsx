@@ -16,6 +16,8 @@ export const EditImage = ({images, onUpdateImages} : Props) => {
         showDelete,
         editedImages,
         showEditModal,
+        showAdd,
+        addImage,
         handleClose,
         handleShow,
         handleShowDelete,
@@ -23,8 +25,12 @@ export const EditImage = ({images, onUpdateImages} : Props) => {
         handleDeleteImage,
         handleSaveChanges,
         setShowEditModal,
-        handleCloseDelete
+        handleCloseDelete,
+        handleAddImage,
+        handleCloseAdd,
+        handleShowAdd
     } = useEditImage(images, onUpdateImages);
+
 
     return (
         <>
@@ -44,26 +50,53 @@ export const EditImage = ({images, onUpdateImages} : Props) => {
                     <div className='contain-images'>
                         {
                         editedImages.map((image, index) => (
-                          <ImageItem
-                key={index}
-                image={image}
-                showEditModal={showEditModal[index]}
-                showDeleteModal={showDelete}
-                handleShowDelete={() => handleShowDelete(index)}
-                handleDeleteImage={() => handleDeleteImage()}
-                handleEditImage={(value) => handleEditImage(index, value)}
-                handleShowEditModal={() =>
-                  setShowEditModal((prevState) =>
-                    prevState.map((val, i) => (i === index ? !val : val))
-                  )
-                }
-                handleCloseDelete={handleCloseDelete}
-                index={index}/>
+                            <ImageItem key={index}
+                                image={image}
+                                showEditModal={
+                                    showEditModal[index]
+                                }
+                                showDeleteModal={showDelete}
+                                handleShowDelete={
+                                    () => handleShowDelete(index)
+                                }
+                                handleDeleteImage={
+                                    () => handleDeleteImage()
+                                }
+                                handleEditImage={
+                                    (value) => handleEditImage(index, value)
+                                }
+                                handleShowEditModal={
+                                    () => setShowEditModal((prevState) => prevState.map((val, i) => (i === index ? !val : val)))
+                                }
+                                handleCloseDelete={handleCloseDelete}
+                                index={index}/>
                         ))
                     } </div>
+                    <Modal show={showAdd}
+                        onHide={handleCloseAdd}
+                        centered>
+                        <Modal.Body><input type='text' className='input-image'
+                                onChange={
+                                    (e) => handleAddImage(e)
+                                }/></Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary"
+                                onClick={handleCloseAdd}>
+                                Cancelar
+                            </Button>
+                            <Button variant="primary"
+                                onClick={addImage}>
+                                Agregar
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
                 </Modal.Body>
 
                 <Modal.Footer>
+                    <Button variant="secondary"
+                        onClick={handleShowAdd}>
+                        Agregar imagen
+                    </Button>
                     <Button variant='secondary'
                         onClick={handleClose}>
                         Cerrar
