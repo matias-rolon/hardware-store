@@ -73,7 +73,6 @@ export const ProductsBackOffice = () => {
 
     return (
         <>
-
             <div className="contain-filters">
                 <SearchIcon className='icon-search'/>
                 <input type="text" className='filter-products'/>
@@ -108,7 +107,6 @@ export const ProductsBackOffice = () => {
                     />
                 })
             }
-
             </div>
         </>
     )
