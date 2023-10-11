@@ -1,7 +1,7 @@
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import {ModalEdit} from './ModalEdit';
-import { ModalDelete } from './ModalDelete';
+import {ModalDelete} from './ModalDelete';
 
 interface Props {
     image: string;
@@ -45,7 +45,10 @@ export const ImageItem = ({
                 image={image}
                 showEditModal={showEditModal}/>
 
-            <ModalDelete handleCloseDelete={handleCloseDelete} handleDeleteImage={handleDeleteImage} handleShowDelete={handleShowDelete} showDeleteModal={showDeleteModal} />
+            <ModalDelete handleCloseDelete={handleCloseDelete}
+                handleDeleteImage={handleDeleteImage}
+                handleShowDelete={handleShowDelete}
+                showDeleteModal={showDeleteModal}/>
 
         </div>
     )

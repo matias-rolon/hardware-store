@@ -3,6 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import '../../styles/EditImage.css';
 import {useEditImage} from '../../../hooks/useEditImage';
 import {ImageItem} from './ImageItem';
+import {ModalAdd} from './ModalAdd';
 
 interface Props {
     images: string[];
@@ -72,24 +73,10 @@ export const EditImage = ({images, onUpdateImages} : Props) => {
                                 index={index}/>
                         ))
                     } </div>
-                    <Modal show={showAdd}
-                        onHide={handleCloseAdd}
-                        centered>
-                        <Modal.Body><input type='text' className='input-image'
-                                onChange={
-                                    (e) => handleAddImage(e)
-                                }/></Modal.Body>
-                        <Modal.Footer>
-                            <Button variant="secondary"
-                                onClick={handleCloseAdd}>
-                                Cancelar
-                            </Button>
-                            <Button variant="primary"
-                                onClick={addImage}>
-                                Agregar
-                            </Button>
-                        </Modal.Footer>
-                    </Modal>
+                    <ModalAdd addImage={addImage}
+                        handleAddImage={handleAddImage}
+                        handleCloseAdd={handleCloseAdd}
+                        showAdd={showAdd}/>
                 </Modal.Body>
 
                 <Modal.Footer>
