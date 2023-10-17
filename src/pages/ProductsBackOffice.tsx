@@ -22,6 +22,32 @@ export const ProductsBackOffice = () => {
                 "https://http2.mlstatic.com/D_NQ_NP_855677-MLA70996248324_082023-O.webp",
                 "https://http2.mlstatic.com/D_NQ_NP_728534-MLA71032751753_082023-O.webp"
             ],
+            descripcion: [
+                {
+                    name: "Tipo de producto",
+                    details: "Destornilladores para golpe"
+                },
+                {
+                    name: "Contenido",
+                    details: "3 destornilladores planos y 3 destornilladores philiips"
+                },
+                {
+                    name: "Certificación",
+                    details: "Norma IRAM 4126-1:99 Certificado N° 00411-1-1PROP emitido por el CIN  TRA"
+                },
+                {
+                    name: "Modelo",
+                    details: "Taladro Impacto GSB 550 RE STD 550W 220V"
+                }, 
+                {
+                    name: "Origen",
+                    details: "Brasil"
+                }, 
+                {
+                    name: "Fabricante",
+                    details: "3M"
+                }
+            ]
         },
         {
             id: 2,
@@ -36,6 +62,32 @@ export const ProductsBackOffice = () => {
                 "https://http2.mlstatic.com/D_NQ_NP_775560-MLA46082514464_052021-O.webp",
                 "https://static.vecteezy.com/system/resources/thumbnails/018/990/688/small/3d-black-rough-grunge-techno-abstract-background-overlap-layer-on-dark-space-with-red-lines-decoration-modern-graphic-design-element-cutout-style-concept-for-banner-flyer-card-or-brochure-cover-vector.jpg"
             ],
+            descripcion: [
+                {
+                    name: "Tipo de producto",
+                    details: "Destornilladores para golpe"
+                },
+                {
+                    name: "Contenido",
+                    details: "3 destornilladores planos y 3 destornilladores philiips"
+                },
+                {
+                    name: "Certificación",
+                    details: "Norma IRAM 4126-1:99 Certificado N° 00411-1-1PROP emitido por el CIN  TRA"
+                },
+                {
+                    name: "Modelo",
+                    details: "Taladro Impacto GSB 550 RE STD 550W 220V"
+                }, 
+                {
+                    name: "Origen",
+                    details: "Brasil"
+                }, 
+                {
+                    name: "Fabricante",
+                    details: "3M"
+                }
+            ]
         },
         {
             id: 3,
@@ -52,6 +104,32 @@ export const ProductsBackOffice = () => {
                 "https://http2.mlstatic.com/D_NQ_NP_900743-MLA53475525868_012023-O.webp",
                 
             ],
+            descripcion: [
+                {
+                    name: "Tipo de producto",
+                    details: "Destornilladores para golpe"
+                },
+                {
+                    name: "Contenido",
+                    details: "3 destornilladores planos y 3 destornilladores philiips"
+                },
+                {
+                    name: "Certificación",
+                    details: "Norma IRAM 4126-1:99 Certificado N° 00411-1-1PROP emitido por el CIN  TRA"
+                },
+                {
+                    name: "Modelo",
+                    details: "Taladro Impacto GSB 550 RE STD 550W 220V"
+                }, 
+                {
+                    name: "Origen",
+                    details: "Brasil"
+                }, 
+                {
+                    name: "Fabricante",
+                    details: "3M"
+                }
+            ]
         },
     ])
 

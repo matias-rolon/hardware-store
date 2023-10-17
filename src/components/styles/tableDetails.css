@@ -6,7 +6,6 @@
   /* Estilo para las filas impares (fondo gris) */
 .table-row-odd {
     background-color: #f3eded;
-    border-radius: 100%;
 }
   
 td, th {

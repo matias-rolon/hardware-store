@@ -1,0 +1,34 @@
+.contain-table-edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-table-edit-name {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    overflow: auto;
+    border-bottom: solid black 1px;
+}
+
+.input-table-edit-details {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    overflow: auto;
+    border-radius: 5px;
+    border-bottom: solid black 1px;
+    border-right: solid black 1px;
+    width: 700px;
+}
+
+.contain-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 67px;
+    margin-left: -10px;
+    margin-right: 10px;
+    cursor: pointer;
+}

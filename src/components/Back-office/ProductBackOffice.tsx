@@ -1,11 +1,17 @@
 import {useState} from 'react'
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { EditImage } from './EditImage/EditImage';
+import { EditDescription } from './EditDescription/EditDescription';
 
 
 interface Props {
     product: Product;
     onUpdateProduct: any;
+}
+
+interface Descripcion {
+    name:    string;
+    details: string;
 }
 
 export interface Product {
@@ -18,6 +24,7 @@ export interface Product {
     time?: number;
     state: string;
     images: string[];
+    descripcion: Descripcion[];
 }
 
 export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
@@ -130,7 +137,7 @@ export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
                     </button>
                     <ul className="dropdown-menu">
                         <li>
-                            <a className="dropdown-item dropdown-config" href="#">Editar descripcion</a>
+                            <EditDescription sectionDetails={product.descripcion} />
                         </li>
                         <li>
                             <EditImage images={images} onUpdateImages={handleUpdateImages}/>
