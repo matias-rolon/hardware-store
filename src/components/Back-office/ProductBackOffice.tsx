@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { EditImage } from './EditImage/EditImage';
-import { EditDescription } from './EditDescription/EditDescription';
+import {EditImage} from './EditImage/EditImage';
+import {EditDescription} from './EditDescription/EditDescription';
 
 
 interface Props {
@@ -9,9 +9,10 @@ interface Props {
     onUpdateProduct: any;
 }
 
-interface Descripcion {
-    name:    string;
+interface Description {
+    name: string;
     details: string;
+    [key: string]: string;
 }
 
 export interface Product {
@@ -24,7 +25,7 @@ export interface Product {
     time?: number;
     state: string;
     images: string[];
-    descripcion: Descripcion[];
+    descripcion: Description[];
 }
 
 export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
@@ -54,7 +55,7 @@ export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
         onUpdateProduct(id, updatedProduct);
     };
 
-    const handleTimeChange = ({target}: any) => {
+    const handleTimeChange = ({target} : any) => {
         const updatedProduct = {
             ...product,
             time: target.value
@@ -62,14 +63,21 @@ export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
         onUpdateProduct(id, updatedProduct);
     }
 
-    const handleUpdateImages = (updatedImages: string[]) => {
-        // Actualiza el array de imágenes en el producto
+    const handleUpdateImages = (updatedImages : string[]) => { // Actualiza el array de imágenes en el producto
         const updatedProduct = {
-          ...product,
-          images: updatedImages,
+            ...product,
+            images: updatedImages
         };
         onUpdateProduct(id, updatedProduct);
-      };
+    };
+
+    const handleUpdateDescriptions = (updateDescription : Description[]) => {
+        const updatedProduct = {
+            ...product,
+            description: updateDescription
+        };
+        onUpdateProduct(id, updatedProduct);
+    };
 
 
     return (
@@ -97,7 +105,8 @@ export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
                         }/>
                 </div>
                 <div className='section-category'>
-                    <select className="select" id="marca"  defaultValue={category}>
+                    <select className="select" id="marca"
+                        defaultValue={category}>
                         <option value="black-box">Black Box</option>
                         <option value="honda">Honda</option>
                         <option value="stanley">Stanley</option>
@@ -109,7 +118,13 @@ export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
                 <div className='section-delivery-time'>
                     {
                     mostrarInput && (
-                        <input type="number" className='input-day-reciber' defaultValue={time || 0} onChange={(e) => handleTimeChange(e)} />
+                        <input type="number" className='input-day-reciber'
+                            defaultValue={
+                                time || 0
+                            }
+                            onChange={
+                                (e) => handleTimeChange(e)
+                            }/>
                     )
                 }
                     <select className="select" id="delivery"
@@ -122,10 +137,12 @@ export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
                         <option value="dias-recibida">dias recibida v/ OC</option>
                     </select>
                 </div>
-                <div className='section-state' onChange={
-                            (e) => handleInputChange(e, 'state')
-                        }>
-                    <select className='select' id="estado"  defaultValue={state}>
+                <div className='section-state'
+                    onChange={
+                        (e) => handleInputChange(e, 'state')
+                }>
+                    <select className='select' id="estado"
+                        defaultValue={state}>
                         <option value="activo">Activo</option>
                         <option value="sin-stock">Sin stock</option>
                         <option value="en-pausa">En pausa</option>
@@ -137,10 +154,14 @@ export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
                     </button>
                     <ul className="dropdown-menu">
                         <li>
-                            <EditDescription sectionDetails={product.descripcion} />
+                            <EditDescription onUpdateDescription={handleUpdateDescriptions}
+                                sectionDetails={
+                                    product.descripcion
+                                }/>
                         </li>
                         <li>
-                            <EditImage images={images} onUpdateImages={handleUpdateImages}/>
+                            <EditImage images={images}
+                                onUpdateImages={handleUpdateImages}/>
                         </li>
                     </ul>
                 </div>

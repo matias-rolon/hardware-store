@@ -1,16 +1,17 @@
 import '../../styles/editDescription.css'
 import DeleteIcon from '@mui/icons-material/Delete';
 
-interface Props {
-    sectionDetails: Details[]
-}
-
 interface Details {
-    name: string,
+    name: string;
     details: string;
 }
 
-export const TableEdit = ({sectionDetails} : Props) => {
+interface TableEditProps {
+    sectionDetails: Details[];
+    onInputChange: (index : number, field : string, value : string) => void;
+}
+
+export const TableEdit = ({sectionDetails, onInputChange} : TableEditProps) => {
     return (
         <div className="contain-table-edit">
             <table>
@@ -21,18 +22,24 @@ export const TableEdit = ({sectionDetails} : Props) => {
                                 index % 2 === 0 ? 'table-row-odd' : 'table-row-even'
                         }>
                             <th>
-                                <input type="text" className='input-table-edit-name'
+                                <input type="text" className="input-table-edit-name"
                                     defaultValue={
                                         detail.name
+                                    }
+                                    onChange={
+                                        (e) => onInputChange(index, 'name', e.target.value)
                                     }/>
                             </th>
                             <td>
-                                <input type="text" className='input-table-edit-details'
+                                <input type="text" className="input-table-edit-details"
                                     defaultValue={
                                         detail.details
+                                    }
+                                    onChange={
+                                        (e) => onInputChange(index, 'details', e.target.value)
                                     }/>
                             </td>
-                            <div className='contain-icon'>
+                            <div className="contain-icon">
                                 <DeleteIcon/>
                             </div>
                         </tr>
@@ -40,5 +47,5 @@ export const TableEdit = ({sectionDetails} : Props) => {
                 } </tbody>
             </table>
         </div>
-    )
-}
+    );
+};

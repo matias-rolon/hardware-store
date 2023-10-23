@@ -1,29 +1,35 @@
-import {useState} from "react";
 import {Button, Modal} from "react-bootstrap";
-import { TableEdit } from "./TableEdit";
+import {TableEdit} from "./TableEdit";
+import {useEditDescription} from "../../../hooks/useEditDescription";
 
 interface Props {
-    sectionDetails: Details[]
+    sectionDetails: Details[];
+    onUpdateDescription: (updatedImages : Details[]) => void;
 }
 
 interface Details {
-    name: string,
+    name: string;
     details: string;
+    [key: string]: string;
 }
 
-export const EditDescription = ({sectionDetails}:Props) => {
+export const EditDescription = ({sectionDetails, onUpdateDescription} : Props) => {
+    const {
+        handleClose,
+        handleShow,
+        show,
+        updatedDetails,
+        setUpdatedDetails,
+        handleSave,
+        handleInputChange
+    } = useEditDescription({sectionDetails, onUpdateDescription});
 
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
-    console.log(sectionDetails);
 
     return (
         <>
             <button className="button-modal"
                 onClick={handleShow}>
-                Editar descripcion
+                Editar descripción
             </button>
 
             <Modal show={show}
@@ -34,7 +40,8 @@ export const EditDescription = ({sectionDetails}:Props) => {
                     <Modal.Title>Editar descripción</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <TableEdit sectionDetails={sectionDetails} />
+                    <TableEdit sectionDetails={updatedDetails}
+                        onInputChange={handleInputChange}/>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary"
@@ -42,11 +49,11 @@ export const EditDescription = ({sectionDetails}:Props) => {
                         Cerrar
                     </Button>
                     <Button variant="primary"
-                        onClick={handleClose}>
+                        onClick={handleSave}>
                         Guardar
                     </Button>
                 </Modal.Footer>
             </Modal>
         </>
-    )
-}
+    );
+};
