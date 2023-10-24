@@ -31,6 +31,12 @@ export function useEditDescription({sectionDetails, onUpdateDescription} : Props
         setUpdatedDetails(updated);
     };
 
+    const handleDeleteDescription = (index: number) => {
+        const updated = updatedDetails.filter((item, i) => i !== index);
+        console.log(updated)
+        setUpdatedDetails(updated);
+    };
+
 
     return {
         show,
@@ -38,6 +44,7 @@ export function useEditDescription({sectionDetails, onUpdateDescription} : Props
         handleClose,
         handleShow,
         handleSave,
-        handleInputChange
+        handleInputChange,
+        handleDeleteDescription
     }
 }

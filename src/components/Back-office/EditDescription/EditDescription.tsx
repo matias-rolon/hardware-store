@@ -20,9 +20,9 @@ export const EditDescription = ({sectionDetails, onUpdateDescription} : Props) =
         show,
         updatedDetails,
         handleSave,
-        handleInputChange
+        handleInputChange,
+        handleDeleteDescription,
     } = useEditDescription({sectionDetails, onUpdateDescription});
-
 
     return (
         <>
@@ -40,7 +40,9 @@ export const EditDescription = ({sectionDetails, onUpdateDescription} : Props) =
                 </Modal.Header>
                 <Modal.Body>
                     <TableEdit sectionDetails={updatedDetails}
-                        onInputChange={handleInputChange}/>
+                        onInputChange={handleInputChange}
+                        onDeleteDescription={handleDeleteDescription}
+                    />
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary"
