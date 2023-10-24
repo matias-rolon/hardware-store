@@ -35,7 +35,6 @@ export function useEditDescription({sectionDetails, onUpdateDescription} : Props
     return {
         show,
         updatedDetails,
-        setUpdatedDetails,
         handleClose,
         handleShow,
         handleSave,

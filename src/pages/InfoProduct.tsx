@@ -41,10 +41,10 @@ export const InfoProduct = () => {
                     </div>
                     
                     {
-                        product?.descripcion && product.descripcion.length > 0 ? (
+                        product?.description && product.description.length > 0 ? (
                             <>
                                 <span className="description-title">Detalles del producto</span>
-                                <TableDetailsProduct sectionDetails={product.descripcion} />
+                                <TableDetailsProduct sectionDetails={product.description} />
                             </>
                         ) : null
                     }

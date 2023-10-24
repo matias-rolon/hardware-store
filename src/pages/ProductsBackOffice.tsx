@@ -22,7 +22,7 @@ export const ProductsBackOffice = () => {
                 "https://http2.mlstatic.com/D_NQ_NP_855677-MLA70996248324_082023-O.webp",
                 "https://http2.mlstatic.com/D_NQ_NP_728534-MLA71032751753_082023-O.webp"
             ],
-            descripcion: [
+            description: [
                 {
                     name: "Tipo de producto",
                     details: "Destornilladores para golpe"
@@ -62,7 +62,7 @@ export const ProductsBackOffice = () => {
                 "https://http2.mlstatic.com/D_NQ_NP_775560-MLA46082514464_052021-O.webp",
                 "https://static.vecteezy.com/system/resources/thumbnails/018/990/688/small/3d-black-rough-grunge-techno-abstract-background-overlap-layer-on-dark-space-with-red-lines-decoration-modern-graphic-design-element-cutout-style-concept-for-banner-flyer-card-or-brochure-cover-vector.jpg"
             ],
-            descripcion: [
+            description: [
                 {
                     name: "Tipo de producto",
                     details: "Destornilladores para golpe"
@@ -104,7 +104,7 @@ export const ProductsBackOffice = () => {
                 "https://http2.mlstatic.com/D_NQ_NP_900743-MLA53475525868_012023-O.webp",
                 
             ],
-            descripcion: [
+            description: [
                 {
                     name: "Tipo de producto",
                     details: "Destornilladores para golpe"

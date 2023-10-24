@@ -25,7 +25,7 @@ export interface Product {
     time?: number;
     state: string;
     images: string[];
-    descripcion: Description[];
+    description: Description[];
 }
 
 export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
@@ -156,7 +156,7 @@ export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
                         <li>
                             <EditDescription onUpdateDescription={handleUpdateDescriptions}
                                 sectionDetails={
-                                    product.descripcion
+                                    product.description
                                 }/>
                         </li>
                         <li>

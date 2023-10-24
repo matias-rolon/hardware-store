@@ -19,7 +19,6 @@ export const EditDescription = ({sectionDetails, onUpdateDescription} : Props) =
         handleShow,
         show,
         updatedDetails,
-        setUpdatedDetails,
         handleSave,
         handleInputChange
     } = useEditDescription({sectionDetails, onUpdateDescription});
