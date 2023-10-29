@@ -32,3 +32,18 @@
     margin-right: 10px;
     cursor: pointer;
 }
+
+.contain-add-description {
+    text-align: center;
+}
+
+.add-name{
+    outline: none;
+    margin-right: 10px;
+}
+
+.add-description {
+    outline: none;
+    margin-left: 10px;
+    min-width: 800px;
+}

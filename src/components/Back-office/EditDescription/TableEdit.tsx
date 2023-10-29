@@ -1,5 +1,8 @@
+import { useState } from 'react';
 import '../../styles/editDescription.css'
 import DeleteIcon from '@mui/icons-material/Delete';
+import {Button, Modal} from "react-bootstrap";
+
 
 
 interface Details {
@@ -15,7 +18,16 @@ interface TableEditProps {
 
 export const TableEdit = ({sectionDetails, onInputChange, onDeleteDescription} : TableEditProps) => {
 
+    const [show, setShow] = useState(false);
+    const [index, setIndex] = useState(0);
+;
+    const handleClose = () => setShow(false);
+    const handleShow = (index:number) => {
+        setShow(true);
+        setIndex(index);
+    } 
 
+    
 
     return (
         <div className="contain-table-edit">
@@ -44,13 +56,31 @@ export const TableEdit = ({sectionDetails, onInputChange, onDeleteDescription} :
                                         (e) => onInputChange(index, 'details', e.target.value)
                                     }/>
                             </td>
-                            <div className="contain-icon" onClick={() => onDeleteDescription(index)}>
+                            <div  className="contain-icon" onClick={() => handleShow(index) }>
                                 <DeleteIcon />
                             </div>
                         </tr>
                     ))
                 } </tbody>
             </table>
+            <Modal show={show}
+                onHide={handleClose}
+                centered
+                size="xl">
+                <Modal.Body>
+                    ¿Estas seguro que desea eliminar el elemento?
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary"
+                        onClick={handleClose}>
+                        No
+                    </Button>
+                    <Button variant="primary"
+                        onClick={ () => { onDeleteDescription(index); handleClose(); }}>
+                        Si
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </div>
     );
 };

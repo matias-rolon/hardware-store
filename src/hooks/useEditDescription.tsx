@@ -33,7 +33,6 @@ export function useEditDescription({sectionDetails, onUpdateDescription} : Props
 
     const handleDeleteDescription = (index: number) => {
         const updated = updatedDetails.filter((item, i) => i !== index);
-        console.log(updated)
         setUpdatedDetails(updated);
     };
 
