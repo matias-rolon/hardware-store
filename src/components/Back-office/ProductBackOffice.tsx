@@ -1,12 +1,13 @@
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {EditImage} from './EditImage/EditImage';
 import {EditDescription} from './EditDescription/EditDescription';
-import { useProductBackOffice } from '../../hooks/useProductBackOffice';
+import {useProductBackOffice} from '../../hooks/useProductBackOffice';
+import {DeleteProduct} from './DeleteProduct';
 
 
 interface Props {
     product: Product;
-    onUpdateProduct: (id: number, updatedProduct: Product) => void;
+    onUpdateProduct: (id : number, updatedProduct : Product) => void;
 }
 
 interface Description {
@@ -46,8 +47,8 @@ export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
         handleInputChange,
         handleTimeChange,
         handleUpdateImages,
-        handleUpdateDescriptions,
-      } = useProductBackOffice(product, onUpdateProduct);
+        handleUpdateDescriptions
+    } = useProductBackOffice(product, onUpdateProduct);
 
 
     return (
@@ -122,7 +123,7 @@ export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
                     <button className="dropdown-section" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <MoreVertIcon className='icon-more'/>
                     </button>
-                    <ul className="dropdown-menu">
+                    <ul className="dropdown-menu dropdown-product-options">
                         <li>
                             <EditDescription onUpdateDescription={handleUpdateDescriptions}
                                 sectionDetails={
@@ -132,6 +133,9 @@ export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
                         <li>
                             <EditImage images={images}
                                 onUpdateImages={handleUpdateImages}/>
+                        </li>
+                        <li>
+                            <DeleteProduct/>
                         </li>
                     </ul>
                 </div>

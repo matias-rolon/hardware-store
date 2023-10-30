@@ -197,7 +197,14 @@
     background: transparent;
 }
 
-
+.button-modal{
+    margin-top: 5px;
+    background-color: #ffff;
+    transition: 0.3s;
+    &:hover{
+        background-color: #cdcdcd;
+    }
+}
 
 .dropdown-config{
     background: transparent !important;

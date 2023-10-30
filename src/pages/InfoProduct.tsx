@@ -2,13 +2,15 @@ import { useParams } from "react-router-dom";
 import { Navbar } from "../components/Navbar/Navbar";
 import { ImageSelector } from "../components/ImageSelector";
 import { TableDetailsProduct } from "../components/TableDetailsProduct";
-import productos from "../data/products.json";
+import { Products } from "../data/products";
 import "./styles/infoProduct.css";
 export const InfoProduct = () => {
     
     const productId = useParams().productId;
 
-    const product = productos.find(product => product.nombre === productId);
+    const {products} = Products()
+
+    const product = products.find(product => product.name === productId);
 
     return (
         <>
@@ -16,16 +18,16 @@ export const InfoProduct = () => {
             <div className="contain-product">
                 <div className="product-info-card">
                     <div className="detail-container">
-                        <ImageSelector images={product?.imagenes}/>
+                        <ImageSelector images={product?.images}/>
                         <div className="detials-product">
-                            <h1 className="title-product">{product?.nombre}</h1>
+                            <h1 className="title-product">{product?.name}</h1>
                             <p>De:
                                 <a href="/">Ferreteria Los Hermanos</a>
                             </p>
                             <p>Disponibe en:
                                 <b>1 día</b>
                             </p>
-                            <span className="price-product">${product?.precio}</span>
+                            <span className="price-product">${product?.price}</span>
                             <div className="buttonsContainer">
                                 <button className="buttonMinus">
                                     -
