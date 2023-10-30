@@ -4,7 +4,7 @@ import './styles/productCard.css'
 interface Props {
     img: string;
     title: string;
-    price: number
+    price: string
 }
 
 export const ProductCard = ({img, price, title}:Props) => {
