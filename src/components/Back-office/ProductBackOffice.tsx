@@ -1,12 +1,12 @@
-import {useState} from 'react'
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {EditImage} from './EditImage/EditImage';
 import {EditDescription} from './EditDescription/EditDescription';
+import { useProductBackOffice } from '../../hooks/useProductBackOffice';
 
 
 interface Props {
     product: Product;
-    onUpdateProduct: any;
+    onUpdateProduct: (id: number, updatedProduct: Product) => void;
 }
 
 interface Description {
@@ -31,7 +31,6 @@ export interface Product {
 export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
 
     const {
-        id,
         deliveryTime,
         time,
         name,
@@ -42,42 +41,13 @@ export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
         images
     } = product
 
-    const [mostrarInput, setMostrarInput] = useState(deliveryTime === 'dias-recibida');
-
-    const handleInputChange = ({target} : any, value : string) => {
-
-        setMostrarInput(target.value == 'dias-recibida');
-
-        const updatedProduct = {
-            ...product,
-            [value]: target.value
-        };
-        onUpdateProduct(id, updatedProduct);
-    };
-
-    const handleTimeChange = ({target} : any) => {
-        const updatedProduct = {
-            ...product,
-            time: target.value
-        };
-        onUpdateProduct(id, updatedProduct);
-    }
-
-    const handleUpdateImages = (updatedImages : string[]) => { // Actualiza el array de imágenes en el producto
-        const updatedProduct = {
-            ...product,
-            images: updatedImages
-        };
-        onUpdateProduct(id, updatedProduct);
-    };
-
-    const handleUpdateDescriptions = (updateDescription : Description[]) => {
-        const updatedProduct = {
-            ...product,
-            description: updateDescription
-        };
-        onUpdateProduct(id, updatedProduct);
-    };
+    const {
+        mostrarInput,
+        handleInputChange,
+        handleTimeChange,
+        handleUpdateImages,
+        handleUpdateDescriptions,
+      } = useProductBackOffice(product, onUpdateProduct);
 
 
     return (
