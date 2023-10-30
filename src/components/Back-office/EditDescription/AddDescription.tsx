@@ -1,13 +1,25 @@
-import {useState} from 'react';
 import {Button, Modal} from 'react-bootstrap'
 import '../../styles/editDescription.css'
 
+interface Props {
+    showAdd: boolean;
+    handleShowAdd: () => void;
+    handleCloseAdd: () => void;
+    handleNameChangeAdd: (e : any) => void;
+    handleDetailsChangeAdd: (e : any) => void;
+    handleSaveAdd: () => void;
+}
 
-export const AddDescription = () => {
 
-    const [showAdd, setShowAdd] = useState(false);
-    const handleCloseAdd = () => setShowAdd(false);
-    const handleShowAdd = () => setShowAdd(true);
+export const AddDescription = ({
+    handleShowAdd,
+    handleCloseAdd,
+    showAdd,
+    handleNameChangeAdd,
+    handleDetailsChangeAdd,
+    handleSaveAdd
+} : Props) => {
+
 
     return (
         <>
@@ -24,8 +36,10 @@ export const AddDescription = () => {
                 </Modal.Header>
                 <Modal.Body>
                     <div className='contain-add-description'>
-                        <input type="text" placeholder='Nombre' className='add-name'/>
-                        <input type="text" placeholder='Descripción' className='add-description'/>
+                        <input type="text" placeholder='Nombre' className='add-name'
+                            onChange={handleNameChangeAdd}/>
+                        <input type="text" placeholder='Descripción' className='add-description'
+                            onChange={handleDetailsChangeAdd}/>
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
@@ -34,7 +48,7 @@ export const AddDescription = () => {
                         Cerrar
                     </Button>
                     <Button variant="primary"
-                        onClick={handleShowAdd}>
+                        onClick={handleSaveAdd}>
                         Guardar
                     </Button>
                 </Modal.Footer>

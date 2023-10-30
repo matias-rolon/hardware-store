@@ -1,7 +1,7 @@
 import {Button, Modal} from "react-bootstrap";
 import {TableEdit} from "./TableEdit";
 import {useEditDescription} from "../../../hooks/useEditDescription";
-import { AddDescription } from './AddDescription';
+import {AddDescription} from './AddDescription';
 
 interface Props {
     sectionDetails: Details[];
@@ -19,10 +19,16 @@ export const EditDescription = ({sectionDetails, onUpdateDescription} : Props) =
         handleClose,
         handleShow,
         show,
+        showAdd,
+        handleShowAdd,
+        handleCloseAdd,
         updatedDetails,
         handleSave,
+        handleNameChangeAdd,
+        handleDetailsChangeAdd,
         handleInputChange,
-        handleDeleteDescription
+        handleDeleteDescription,
+        handleSaveAdd,
     } = useEditDescription({sectionDetails, onUpdateDescription});
 
     return (
@@ -45,7 +51,12 @@ export const EditDescription = ({sectionDetails, onUpdateDescription} : Props) =
                         onDeleteDescription={handleDeleteDescription}/>
                 </Modal.Body>
                 <Modal.Footer>
-                    <AddDescription/>
+                    <AddDescription handleCloseAdd={handleCloseAdd}
+                        handleShowAdd={handleShowAdd}
+                        showAdd={showAdd}
+                        handleNameChangeAdd={handleNameChangeAdd}
+                        handleDetailsChangeAdd={handleDetailsChangeAdd}
+                        handleSaveAdd={handleSaveAdd}/>
                     <Button variant="secondary"
                         onClick={handleClose}>
                         Cerrar
