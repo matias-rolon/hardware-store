@@ -7,23 +7,28 @@ import {Products} from "../data/products";
 
 export const ProductsBackOffice = () => {
 
-    const { products, setProducts } = Products(); 
+    const {products, setProducts} = Products();
 
-    const updateProduct = (id:number, updatedProduct:Product) => {
+    const updateProduct = (id : number, updatedProduct : Product) => {
         const updatedProducts = [...products];
-      
-        const index = updatedProducts.findIndex((product) => product.id === id);
-      
-        if (index !== -1) {
-          updatedProducts[index] = updatedProduct;
-          setProducts(updatedProducts);
-        }
-      };
-      
 
-      const mostrar = () => {
+        const index = updatedProducts.findIndex((product) => product.id === id);
+
+        if (index !== -1) {
+            updatedProducts[index] = updatedProduct;
+            setProducts(updatedProducts);
+        }
+    };
+
+    const deleteProduct = (id:number) => {
+        const updatedProducts = products.filter(product => product.id !== id);
+        setProducts(updatedProducts);
+    }
+
+
+    const mostrar = () => {
         console.log(products);
-      }
+    }
 
     return (
         <>
@@ -34,7 +39,8 @@ export const ProductsBackOffice = () => {
                     <FilterListIcon/>
                     Filtrar
                 </button>
-                <button className='button-filter' onClick={mostrar}>
+                <button className='button-filter'
+                    onClick={mostrar}>
                     <SaveIcon/>
                     Guardar
                 </button>
@@ -53,15 +59,15 @@ export const ProductsBackOffice = () => {
                 </div>
                 {
 
-                products.map( product => {
-                    return <ProductBackOffice 
-                    key={product.id} 
-                    product={product}
-                    onUpdateProduct={updateProduct}
-                    />
+                products.map(product => {
+                    return <ProductBackOffice key={
+                            product.id
+                        }
+                        onDeleteProduct={deleteProduct}
+                        product={product}
+                        onUpdateProduct={updateProduct}/>
                 })
-            }
-            </div>
+            } </div>
         </>
     )
 }

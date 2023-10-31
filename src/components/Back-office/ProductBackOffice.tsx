@@ -8,6 +8,7 @@ import {DeleteProduct} from './DeleteProduct';
 interface Props {
     product: Product;
     onUpdateProduct: (id : number, updatedProduct : Product) => void;
+    onDeleteProduct: (id: number) => void
 }
 
 interface Description {
@@ -29,7 +30,7 @@ export interface Product {
     description: Description[];
 }
 
-export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
+export const ProductBackOffice = ({product, onUpdateProduct, onDeleteProduct} : Props) => {
 
     const {
         deliveryTime,
@@ -47,7 +48,7 @@ export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
         handleInputChange,
         handleTimeChange,
         handleUpdateImages,
-        handleUpdateDescriptions
+        handleUpdateDescriptions,
     } = useProductBackOffice(product, onUpdateProduct);
 
 
@@ -135,7 +136,7 @@ export const ProductBackOffice = ({product, onUpdateProduct} : Props) => {
                                 onUpdateImages={handleUpdateImages}/>
                         </li>
                         <li>
-                            <DeleteProduct/>
+                            <DeleteProduct id={product.id} deleteProduct={onDeleteProduct}/>
                         </li>
                     </ul>
                 </div>

@@ -1,7 +1,12 @@
 import {useState} from "react";
 import {Button, Modal} from "react-bootstrap";
 
-export const DeleteProduct = () => {
+interface Props {
+    deleteProduct: (id: number) => void
+    id:number;
+}
+
+export const DeleteProduct = ({deleteProduct, id} : Props) => {
 
     const [show, setShow] = useState(false);
 
@@ -29,7 +34,12 @@ export const DeleteProduct = () => {
                         Cerrar
                     </Button>
                     <Button variant="danger"
-                        onClick={handleClose}>
+                        onClick={
+                            () => {
+                                deleteProduct(id);
+                                handleClose();
+                            }
+                    }>
                         Eliminar
                     </Button>
                 </Modal.Footer>
