@@ -14,7 +14,6 @@ export interface Product {
     category: string;
     deliveryTime: string;
     time?: number;
-    state: string;
     images: string[];
     description: Description[];
   }

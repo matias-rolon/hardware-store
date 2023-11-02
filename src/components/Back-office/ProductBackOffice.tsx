@@ -25,7 +25,6 @@ export interface Product {
     category: string;
     deliveryTime: string;
     time?: number;
-    state: string;
     images: string[];
     description: Description[];
 }
@@ -39,7 +38,6 @@ export const ProductBackOffice = ({product, onUpdateProduct, onDeleteProduct} : 
         price,
         stock,
         category,
-        state,
         images
     } = product
 
@@ -77,13 +75,15 @@ export const ProductBackOffice = ({product, onUpdateProduct, onDeleteProduct} : 
                         }/>
                 </div>
                 <div className='section-category'>
-                    <select className="select" id="marca"
+                    <select className="select" id="category"
                         defaultValue={category}>
-                        <option value="black-box">Black Box</option>
-                        <option value="honda">Honda</option>
-                        <option value="stanley">Stanley</option>
-                        <option value="stihl">Stihl</option>
-                        <option value="de-walt">De Walt</option>
+                        <option value="soldadura">Soldadura</option>
+                        <option value="herramientas">Herramientas</option>
+                        <option value="construccion">Construcción</option>
+                        <option value="electricidad">Electricidad</option>
+                        <option value="seguridad">Seguridad</option>
+                        <option value="electricidad">Electronica</option>
+                        <option value="servicios">Servicios</option>
                     </select>
                 </div>
 
@@ -109,17 +109,7 @@ export const ProductBackOffice = ({product, onUpdateProduct, onDeleteProduct} : 
                         <option value="dias-recibida">dias recibida v/ OC</option>
                     </select>
                 </div>
-                <div className='section-state'
-                    onChange={
-                        (e) => handleInputChange(e, 'state')
-                }>
-                    <select className='select' id="estado"
-                        defaultValue={state}>
-                        <option value="activo">Activo</option>
-                        <option value="sin-stock">Sin stock</option>
-                        <option value="en-pausa">En pausa</option>
-                    </select>
-                </div>
+
                 <div className='section-config'>
                     <button className="dropdown-section" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <MoreVertIcon className='icon-more'/>

@@ -7,10 +7,9 @@ export function Products(){
             name: 'Martillo Galponero O De Uña Mango Ergonomico De Calidad',
             price: "13000",
             stock: 230,
-            category: 'honda',
+            category: 'electricidad',
             deliveryTime: 'dias-recibida',
             time:13,
-            state: 'activo',
             images: [
                 "https://http2.mlstatic.com/D_NQ_NP_889029-MLA71032613845_082023-O.webp",
                 "https://http2.mlstatic.com/D_NQ_NP_855677-MLA70996248324_082023-O.webp",
@@ -48,9 +47,8 @@ export function Products(){
             name: 'Destornillador Plano 3 X 75 Mm Tolsen 20016',
             price: "13000",
             stock: 230,
-            category: 'Herramientas eléctricas',
+            category: 'herramientas',
             deliveryTime: 'entrega',
-            state: 'sin-stock',
             images: [
                 "https://http2.mlstatic.com/D_NQ_NP_715809-MLA46082506451_052021-O.webp",
                 "https://http2.mlstatic.com/D_NQ_NP_775560-MLA46082514464_052021-O.webp",
@@ -88,9 +86,8 @@ export function Products(){
             name: 'Kit Set X3 De Pinza Universal Y Alicate Reforzadas Aislada',
             price: "13000",
             stock: 230,
-            category: 'Herramientas eléctricas',
+            category: 'servicios',
             deliveryTime: 'consultar',
-            state: 'en-pausa',
             images: [
                 "https://http2.mlstatic.com/D_NQ_NP_978385-MLA53475628237_012023-O.webp",
                 "https://http2.mlstatic.com/D_NQ_NP_698849-MLA53475610336_012023-O.webp",

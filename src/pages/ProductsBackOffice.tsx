@@ -4,6 +4,7 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import {Product, ProductBackOffice} from '../components/Back-office/ProductBackOffice';
 import SaveIcon from '@mui/icons-material/Save';
 import {Products} from "../data/products";
+import { AddProduct } from '../components/Back-office/AddProduct';
 
 export const ProductsBackOffice = () => {
 
@@ -52,9 +53,8 @@ export const ProductsBackOffice = () => {
                     <div className='section-stock'>STOCK</div>
                     <div className='section-category'>CATEGORIA</div>
                     <div className='section-category'>PLAZO DE ENTREGA</div>
-                    <div className='section-state'>ESTADO</div>
                     <div className='section-config'>
-                        <button className='button-create'>+</button>
+                        <AddProduct/>
                     </div>
                 </div>
                 {
