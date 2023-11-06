@@ -30,7 +30,6 @@ export function useAddDescription({addProduct, products} : Props) {
 
     const getMaxId = () => {
       setMaxId(maxId + 1);
-      console.log(maxId)
       return maxId;
     }
 
