@@ -2,7 +2,6 @@ import {Button, Modal} from "react-bootstrap";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {EditDescription} from '../EditDescription/EditDescription';
 import {useAddDescription} from "../../../hooks/useAddProduct";
-import {useState} from "react";
 
 interface Description {
     name: string;
@@ -28,18 +27,6 @@ interface Props {
 
 export const AddProduct = ({addProduct} : Props) => {
 
-    const description = {
-        sectionDetails: [
-            {
-                name: "",
-                details: "",
-                "": ""
-            },
-        ],
-        onUpdateDescription: (updatedDescription : Description[]) => {}
-    };
-
-
     const {
         handleClose,
         handleShow,
@@ -47,7 +34,9 @@ export const AddProduct = ({addProduct} : Props) => {
         handleInputChange,
         show,
         showInput,
-        handleTimeChange
+        product,
+        handleTimeChange,
+        onUpdateDescription
     } = useAddDescription({addProduct});
 
     return (
@@ -121,10 +110,10 @@ export const AddProduct = ({addProduct} : Props) => {
                             <ul className="dropdown-menu dropdown-product-options">
                                 <li>
                                     <EditDescription sectionDetails={
-                                            description.sectionDetails
+                                            product.description
                                         }
                                         onUpdateDescription={
-                                            description.onUpdateDescription
+                                            onUpdateDescription
                                         }/>
                                 </li>
                                 <li>

@@ -76,10 +76,20 @@ export function useAddDescription({addProduct} : Props) {
         handleClose();
     }
 
+    const onUpdateDescription = (updateDescription : Description[]) => {
+        const updatedProduct = {
+            ...product,
+            description: updateDescription
+        };
+        setProduct(updatedProduct);
+    }
+
 
     return {
         show,
         showInput,
+        product,
+        onUpdateDescription,
         handleClose,
         handleShow,
         handelAdd,

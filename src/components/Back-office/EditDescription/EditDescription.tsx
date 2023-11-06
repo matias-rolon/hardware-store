@@ -5,7 +5,7 @@ import {AddDescription} from './AddDescription';
 
 interface Props {
     sectionDetails: Details[];
-    onUpdateDescription: (updatedImages : Details[]) => void;
+    onUpdateDescription: (updatedDescription : Details[]) => void;
 }
 
 interface Details {
