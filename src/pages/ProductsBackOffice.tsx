@@ -5,10 +5,20 @@ import {Product, ProductBackOffice} from '../components/Back-office/ProductBackO
 import SaveIcon from '@mui/icons-material/Save';
 import {Products} from "../data/products";
 import {AddProduct} from '../components/Back-office/AddProduct/AddProduct';
+import { useState } from 'react';
 
 export const ProductsBackOffice = () => {
 
     const {products, setProducts} = Products();
+
+    const [searchTerm, setSearchTerm] = useState(''); 
+    const handleSearchChange = (e:any) => {
+        setSearchTerm(e.target.value);
+    };
+    const filteredProducts = products.filter((product) => {
+        // Filtra los productos que contienen el término de búsqueda en su nombre
+        return product.name.toLowerCase().includes(searchTerm.toLowerCase());
+    });
 
     const updateProduct = (id : number, updatedProduct : Product) => {
         const updatedProducts = [...products];
@@ -41,7 +51,13 @@ export const ProductsBackOffice = () => {
         <>
             <div className="contain-filters">
                 <SearchIcon className='icon-search'/>
-                <input type="text" className='filter-products'/>
+                <input
+                    type="text"
+                    className="filter-products"
+                    placeholder="Buscar productos"
+                    value={searchTerm}
+                    onChange={handleSearchChange} // Manejar cambios en el input
+                />
                 <button className='button-filter'>
                     <FilterListIcon/>
                     Filtrar
@@ -63,17 +79,15 @@ export const ProductsBackOffice = () => {
                         <AddProduct addProduct={addProduct} products={products}/>
                     </div>
                 </div>
-                {
-
-                products.map(product => {
-                    return <ProductBackOffice key={
-                            product.id
-                        }
+                {filteredProducts.map((product) => (
+                    <ProductBackOffice
+                        key={product.id}
                         onDeleteProduct={deleteProduct}
                         product={product}
-                        onUpdateProduct={updateProduct}/>
-                })
-            } </div>
+                        onUpdateProduct={updateProduct}
+                    />
+                ))}
+                </div>
         </>
     )
 }
