@@ -84,12 +84,21 @@ export function useAddDescription({addProduct} : Props) {
         setProduct(updatedProduct);
     }
 
+    const onUpdateImages = (updatedImages : string[]) => {
+        const updatedProduct = {
+            ...product,
+            images: updatedImages
+        };
+        setProduct(updatedProduct);
+    };
+
 
     return {
         show,
         showInput,
         product,
         onUpdateDescription,
+        onUpdateImages,
         handleClose,
         handleShow,
         handelAdd,

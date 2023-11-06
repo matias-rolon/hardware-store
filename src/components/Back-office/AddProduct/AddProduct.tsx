@@ -2,6 +2,7 @@ import {Button, Modal} from "react-bootstrap";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {EditDescription} from '../EditDescription/EditDescription';
 import {useAddDescription} from "../../../hooks/useAddProduct";
+import { EditImage } from '../EditImage/EditImage';
 
 interface Description {
     name: string;
@@ -36,7 +37,8 @@ export const AddProduct = ({addProduct} : Props) => {
         showInput,
         product,
         handleTimeChange,
-        onUpdateDescription
+        onUpdateDescription,
+        onUpdateImages
     } = useAddDescription({addProduct});
 
     return (
@@ -117,9 +119,7 @@ export const AddProduct = ({addProduct} : Props) => {
                                         }/>
                                 </li>
                                 <li>
-                                    <button className="button-modal">
-                                        Añadir imagenes
-                                    </button>
+                                    <EditImage images={product.images} onUpdateImages={onUpdateImages} />
                                 </li>
                             </ul>
                         </div>
