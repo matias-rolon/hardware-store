@@ -42,7 +42,7 @@ export const ProductBackOffice = ({product, onUpdateProduct, onDeleteProduct} : 
     } = product
 
     const {
-        mostrarInput,
+        showInput,
         handleInputChange,
         handleTimeChange,
         handleUpdateImages,
@@ -76,7 +76,9 @@ export const ProductBackOffice = ({product, onUpdateProduct, onDeleteProduct} : 
                 </div>
                 <div className='section-category'>
                     <select className="select" id="category"
-                        defaultValue={category}>
+                        defaultValue={category} onChange={
+                            (e) => handleInputChange(e, 'category')
+                        }>
                         <option value="soldadura">Soldadura</option>
                         <option value="herramientas">Herramientas</option>
                         <option value="construccion">Construcción</option>
@@ -89,7 +91,7 @@ export const ProductBackOffice = ({product, onUpdateProduct, onDeleteProduct} : 
 
                 <div className='section-delivery-time'>
                     {
-                    mostrarInput && (
+                    showInput && (
                         <input type="number" className='input-day-reciber'
                             defaultValue={
                                 time || 0

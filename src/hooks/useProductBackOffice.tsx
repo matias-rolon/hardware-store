@@ -19,44 +19,47 @@ export interface Product {
   }
 
 export function useProductBackOffice(product: Product, onUpdateProduct: (id: number, updatedProduct: Product) => void) {
-    const [mostrarInput, setMostrarInput] = useState(product.deliveryTime === 'dias-recibida');
-  
-    const handleInputChange = (value: any, targetValue: string) => {
-      setMostrarInput(targetValue === 'dias-recibida');
-  
+  const [showInput, setShowInput] = useState(product.deliveryTime === 'dias-recibida');
+
+  const handleInputChange = ({target} : any, value : string) => {
+      if(value == 'deliveryTime'){
+        setShowInput(target.value == 'dias-recibida');
+      }
+
       const updatedProduct = {
-        ...product,
-        [value]: targetValue,
+          ...product,
+          [value]: target.value
       };
       onUpdateProduct(product.id, updatedProduct);
-    };
-  
-    const handleTimeChange = (time: any) => {
+  };
+
+  const handleTimeChange = ({target} : any) => {
       const updatedProduct = {
-        ...product,
-        time,
+          ...product,
+          time: target.value
       };
       onUpdateProduct(product.id, updatedProduct);
-    }
-  
-    const handleUpdateImages = (updatedImages: string[]) => {
+  }
+
+  const handleUpdateImages = (updatedImages : string[]) => { // Actualiza el array de imágenes en el producto
       const updatedProduct = {
-        ...product,
-        images: updatedImages,
+          ...product,
+          images: updatedImages
       };
       onUpdateProduct(product.id, updatedProduct);
-    };
-  
-    const handleUpdateDescriptions = (updatedDescription: Description[]) => {
+  };
+
+  const handleUpdateDescriptions = (updateDescription : Description[]) => {
       const updatedProduct = {
-        ...product,
-        description: updatedDescription,
+          ...product,
+          description: updateDescription
       };
       onUpdateProduct(product.id, updatedProduct);
-    };
+  };
+
   
     return {
-      mostrarInput,
+      showInput,
       handleInputChange,
       handleTimeChange,
       handleUpdateImages,

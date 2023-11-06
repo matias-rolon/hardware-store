@@ -4,7 +4,7 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import {Product, ProductBackOffice} from '../components/Back-office/ProductBackOffice';
 import SaveIcon from '@mui/icons-material/Save';
 import {Products} from "../data/products";
-import { AddProduct } from '../components/Back-office/AddProduct';
+import {AddProduct} from '../components/Back-office/AddProduct/AddProduct';
 
 export const ProductsBackOffice = () => {
 
@@ -21,8 +21,14 @@ export const ProductsBackOffice = () => {
         }
     };
 
-    const deleteProduct = (id:number) => {
+    const deleteProduct = (id : number) => {
         const updatedProducts = products.filter(product => product.id !== id);
+        setProducts(updatedProducts);
+    }
+
+    const addProduct = (newProduct:Product) => { 
+        const updatedProducts = [...products];
+        updatedProducts.push(newProduct);
         setProducts(updatedProducts);
     }
 
@@ -54,7 +60,7 @@ export const ProductsBackOffice = () => {
                     <div className='section-category'>CATEGORIA</div>
                     <div className='section-category'>PLAZO DE ENTREGA</div>
                     <div className='section-config'>
-                        <AddProduct/>
+                        <AddProduct addProduct={addProduct}/>
                     </div>
                 </div>
                 {
