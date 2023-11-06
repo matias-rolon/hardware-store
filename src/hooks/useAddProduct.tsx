@@ -19,11 +19,20 @@ interface Description {
 }
 
 interface Props {
-    addProduct: (newProduct : Product) => void
+    addProduct: (newProduct : Product) => void;
+    products: Product[]
 }
 
 
-export function useAddDescription({addProduct} : Props) {
+export function useAddDescription({addProduct, products} : Props) {
+
+    const [maxId, setMaxId] = useState(Math.max(...products.map((product) => product.id)) + 1);
+
+    const getMaxId = () => {
+      setMaxId(maxId + 1);
+      console.log(maxId)
+      return maxId;
+    }
 
 
     const [show, setShow] = useState(false);
@@ -32,7 +41,7 @@ export function useAddDescription({addProduct} : Props) {
     const handleShow = () => setShow(true);
 
     const [product, setProduct] = useState({
-        id: 5,
+        id: maxId,
         name: '',
         price: "",
         stock: 0,
@@ -72,6 +81,11 @@ export function useAddDescription({addProduct} : Props) {
     }
 
     const handelAdd = () => {
+        const updatedProduct = {
+            ...product,
+            id: getMaxId() + 1
+        };
+        setProduct(updatedProduct);
         addProduct(product)
         handleClose();
     }

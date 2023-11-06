@@ -60,7 +60,7 @@ export const ProductsBackOffice = () => {
                     <div className='section-category'>CATEGORIA</div>
                     <div className='section-category'>PLAZO DE ENTREGA</div>
                     <div className='section-config'>
-                        <AddProduct addProduct={addProduct}/>
+                        <AddProduct addProduct={addProduct} products={products}/>
                     </div>
                 </div>
                 {

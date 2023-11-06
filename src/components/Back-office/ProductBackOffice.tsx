@@ -8,7 +8,7 @@ import {DeleteProduct} from './DeleteProduct';
 interface Props {
     product: Product;
     onUpdateProduct: (id : number, updatedProduct : Product) => void;
-    onDeleteProduct: (id: number) => void
+    onDeleteProduct: (id: number) => void;
 }
 
 interface Description {

@@ -23,10 +23,11 @@ export interface Product {
 }
 
 interface Props {
-    addProduct: (newProduct : Product) => void
+    addProduct: (newProduct : Product) => void;
+    products: Product[];
 }
 
-export const AddProduct = ({addProduct} : Props) => {
+export const AddProduct = ({addProduct, products} : Props) => {
 
     const {
         handleClose,
@@ -39,7 +40,7 @@ export const AddProduct = ({addProduct} : Props) => {
         handleTimeChange,
         onUpdateDescription,
         onUpdateImages
-    } = useAddDescription({addProduct});
+    } = useAddDescription({addProduct, products});
 
     return (
         <>
