@@ -3,22 +3,28 @@ import SearchIcon from '@mui/icons-material/Search';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import {ProductBackOffice} from '../components/Back-office/ProductBackOffice';
 import SaveIcon from '@mui/icons-material/Save';
-import {Products} from "../data/products";
 import {AddProduct} from '../components/Back-office/AddProduct/AddProduct';
 import {useProductsBackOffice} from "../hooks/useProductsBackOffice";
+import { useEffect } from 'react';
 
 export const ProductsBackOffice = () => {
 
-    const {products, setProducts} = Products();
     const {
         searchTerm,
+        products,
+        getProducts,
         handleSearchChange,
         save,
         addProduct,
         filteredProducts,
         deleteProduct,
         updateProduct
-    } = useProductsBackOffice({products, setProducts});
+    } = useProductsBackOffice();
+
+    useEffect(() => {
+        getProducts();
+    }, [])
+    
 
 
     return (

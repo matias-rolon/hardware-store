@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { collection, addDoc } from 'firebase/firestore'
+import { collection, addDoc, getDoc, getDocs, deleteDoc } from 'firebase/firestore'
 import { db } from "../data/firebase";
 
 interface Description {
@@ -20,19 +20,27 @@ export interface Product {
     description: Description[];
 }
 
-interface Props {
-    products: Product[];
-    setProducts:  React.Dispatch<React.SetStateAction<any>>;
-}
+// interface Props {
+//     products: Product[];
+//     setProducts:  React.Dispatch<React.SetStateAction<any>>;
+// }
 
-export function useProductsBackOffice({products, setProducts}:Props) {
+export function useProductsBackOffice() {
 
-    const productsCollection = collection(db, "products")
+    const productsCollection = collection(db, "products");
+
+    const [products, setProducts] = useState<Product[]>([])
+
+    const getProducts = async() => {
+        const data = await getDocs(productsCollection);
+        console.log(data.docs.map( (doc) => ({...doc.data(), id:doc.id})))
+        setProducts(data.docs.map( (doc) => ({...doc.data(), id:doc.id})))
+    }
 
     const [searchTerm, setSearchTerm] = useState(''); 
 
     const handleSearchChange = (e:any) => {
-        setSearchTerm(e.target.value);
+        setSearchTerm(e.target.value.document);
     };
     
     const filteredProducts = products.filter((product) => {
@@ -64,10 +72,13 @@ export function useProductsBackOffice({products, setProducts}:Props) {
 
 
     const save = () => {
-        console.log(products);
+        
+        getProducts();
     }
 
     return {
+        products,
+        getProducts,
         handleSearchChange,
         filteredProducts,
         updateProduct,
