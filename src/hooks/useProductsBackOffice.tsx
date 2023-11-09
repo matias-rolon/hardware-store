@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { collection, addDoc } from 'firebase/firestore'
+import { db } from "../data/firebase";
 
 interface Description {
     name: string;
@@ -24,6 +26,9 @@ interface Props {
 }
 
 export function useProductsBackOffice({products, setProducts}:Props) {
+
+    const productsCollection = collection(db, "products")
+
     const [searchTerm, setSearchTerm] = useState(''); 
 
     const handleSearchChange = (e:any) => {
@@ -50,10 +55,11 @@ export function useProductsBackOffice({products, setProducts}:Props) {
         setProducts(updatedProducts);
     }
 
-    const addProduct = (newProduct:Product) => { 
+    const addProduct = async (newProduct:Product) => { 
         const updatedProducts = [...products];
         updatedProducts.push(newProduct);
         setProducts(updatedProducts);
+        await addDoc(productsCollection, newProduct);
     }
 
 
