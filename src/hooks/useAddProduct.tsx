@@ -1,22 +1,7 @@
 import {useState} from "react";
+import { Product } from "../interfaces/Product";
 
-export interface Product {
-    id: number;
-    name: string;
-    price: string;
-    stock: number;
-    category: string;
-    deliveryTime: string;
-    time?: number;
-    images: string[];
-    description: Description[];
-}
 
-interface Description {
-    name: string;
-    details: string;
-    [key: string]: string;
-}
 
 interface Props {
     addProduct: (newProduct : Product) => void;
@@ -26,7 +11,7 @@ interface Props {
 
 export function useAddDescription({addProduct, products} : Props) {
 
-    const [maxId, setMaxId] = useState(Math.max(...products.map((product) => product.id)) + 1);
+    const [maxId, setMaxId] = useState(Math.max(...products.map((product) => Number(product.id))) + 1);
 
     const getMaxId = () => {
       setMaxId(maxId + 1);
@@ -40,7 +25,7 @@ export function useAddDescription({addProduct, products} : Props) {
     const handleShow = () => setShow(true);
 
     const [product, setProduct] = useState({
-        id: maxId,
+        id: `${maxId}`,
         name: '',
         price: "",
         stock: 0,
@@ -82,7 +67,7 @@ export function useAddDescription({addProduct, products} : Props) {
     const handelAdd = () => {
         const updatedProduct = {
             ...product,
-            id: getMaxId() + 1
+            id: `${getMaxId() + 1}`
         };
         setProduct(updatedProduct);
         addProduct(product)

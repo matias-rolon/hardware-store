@@ -3,32 +3,14 @@ import {EditImage} from './EditImage/EditImage';
 import {EditDescription} from './EditDescription/EditDescription';
 import {useProductBackOffice} from '../../hooks/useProductBackOffice';
 import {DeleteProduct} from './DeleteProduct';
+import { Product } from '../../interfaces/Product';
 
 
 interface Props {
     product: Product;
-    onUpdateProduct: (id : number, updatedProduct : Product) => void;
-    onDeleteProduct: (id: number) => void;
+    onUpdateProduct: (id : string, updatedProduct : Product) => void;
+    onDeleteProduct: (id: string) => void;
 }
-
-interface Description {
-    name: string;
-    details: string;
-    [key: string]: string;
-}
-
-export interface Product {
-    id: number;
-    name: string;
-    price: string;
-    stock: number;
-    category: string;
-    deliveryTime: string;
-    time?: number;
-    images: string[];
-    description: Description[];
-}
-
 export const ProductBackOffice = ({product, onUpdateProduct, onDeleteProduct} : Props) => {
 
     const {

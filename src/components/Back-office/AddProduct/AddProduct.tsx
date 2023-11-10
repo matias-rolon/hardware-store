@@ -3,24 +3,8 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {EditDescription} from '../EditDescription/EditDescription';
 import {useAddDescription} from "../../../hooks/useAddProduct";
 import { EditImage } from '../EditImage/EditImage';
+import { Product } from "../../../interfaces/Product";
 
-interface Description {
-    name: string;
-    details: string;
-    [key: string]: string;
-}
-
-export interface Product {
-    id: number;
-    name: string;
-    price: string;
-    stock: number;
-    category: string;
-    deliveryTime: string;
-    time?: number;
-    images: string[];
-    description: Description[];
-}
 
 interface Props {
     addProduct: (newProduct : Product) => void;

@@ -1,24 +1,9 @@
 import { useState } from "react";
-import { collection, addDoc, doc, getDocs, updateDoc, writeBatch } from 'firebase/firestore'
+import { collection, addDoc, doc, getDocs, writeBatch, deleteDoc } from 'firebase/firestore'
 import { db } from "../data/firebase";
+import { Product } from '../interfaces/Product';
 
-interface Description {
-    name: string;
-    details: string;
-    [key: string]: string;
-}
 
-export interface Product {
-    id: number;
-    name: string;
-    price: string;
-    stock: number;
-    category: string;
-    deliveryTime: string;
-    time?: number;
-    images: string[];
-    description: Description[];
-}
 
 // interface Props {
 //     products: Product[];
@@ -47,7 +32,7 @@ export function useProductsBackOffice() {
         return product.name.toLowerCase().includes(searchTerm.toLowerCase());
     });
 
-    const updateProduct = (id : number, updatedProduct : Product) => {
+    const updateProduct = (id : string, updatedProduct : Product) => {
         const updatedProducts = [...products];
 
         const index = updatedProducts.findIndex((product) => product.id === id);
@@ -58,10 +43,10 @@ export function useProductsBackOffice() {
         }
     };
 
-    const deleteProduct = (id : number) => {
-        console.log(id)
-        const updatedProducts = products.filter(product => product.id !== id);
-        setProducts(updatedProducts);
+    const deleteProduct = async (id : string) => {
+        const productDoc = doc(db, "products", id)
+        await deleteDoc(productDoc)
+        getProducts()
     }
 
     const addProduct = async (newProduct:Product) => { 

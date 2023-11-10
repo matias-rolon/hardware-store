@@ -2,8 +2,8 @@ import {useState} from "react";
 import {Button, Modal} from "react-bootstrap";
 
 interface Props {
-    deleteProduct: (id: number) => void
-    id:number;
+    deleteProduct: (id: string) => void
+    id:string;
 }
 
 export const DeleteProduct = ({deleteProduct, id} : Props) => {

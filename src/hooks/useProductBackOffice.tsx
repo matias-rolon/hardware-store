@@ -1,24 +1,7 @@
 import { useState } from "react";
+import { Product } from "../interfaces/Product";
 
-interface Description {
-    name: string;
-    details: string;
-    [key: string]: string;
-  }
-
-export interface Product {
-    id: number;
-    name: string;
-    price: string;
-    stock: number;
-    category: string;
-    deliveryTime: string;
-    time?: number;
-    images: string[];
-    description: Description[];
-  }
-
-export function useProductBackOffice(product: Product, onUpdateProduct: (id: number, updatedProduct: Product) => void) {
+export function useProductBackOffice(product: Product, onUpdateProduct: (id: string, updatedProduct: Product) => void) {
   const [showInput, setShowInput] = useState(product.deliveryTime === 'dias-recibida');
 
   const handleInputChange = ({target} : any, value : string) => {
