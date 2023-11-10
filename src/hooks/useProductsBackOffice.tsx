@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { collection, addDoc, getDoc, getDocs, deleteDoc } from 'firebase/firestore'
+import { collection, addDoc, doc, getDocs, updateDoc, writeBatch } from 'firebase/firestore'
 import { db } from "../data/firebase";
 
 interface Description {
@@ -59,6 +59,7 @@ export function useProductsBackOffice() {
     };
 
     const deleteProduct = (id : number) => {
+        console.log(id)
         const updatedProducts = products.filter(product => product.id !== id);
         setProducts(updatedProducts);
     }
@@ -71,9 +72,18 @@ export function useProductsBackOffice() {
     }
 
 
-    const save = () => {
-        
-        getProducts();
+    const save = async () => {
+        const batch = writeBatch(db);
+        products.forEach((product) => {
+            const productRef = doc(db, "products", product.id.toString());
+            batch.update(productRef, product);
+        });
+
+        try {
+            await batch.commit();
+        } catch (error) {
+            alert(`Error updating products in batch ${error}`);
+        }
     }
 
     return {
