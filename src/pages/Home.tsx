@@ -1,15 +1,13 @@
 import {ProductCard} from '../components/ProductCard'
 import {Carousel} from '../components/Carousel'
 import {Navbar} from '../components/Navbar/Navbar'
-
-import Productos from "../data/products.json";
-
 import './styles/home.css'
-import { useState } from 'react';
+
+import { Products } from "../data/products";
 
 export const Home = () => {
 
-    const [products] = useState(Productos)
+    const { products } = Products()
 
     return (
         <div className='contain-page'>
@@ -19,10 +17,10 @@ export const Home = () => {
                 {
                     products.map( producto => (
                         <ProductCard
-                            key={producto.nombre}
-                            price={producto.precio} 
-                            img={producto.imagenes[0]} 
-                            title={producto.nombre} 
+                            key={producto.id}
+                            price={producto.price} 
+                            img={producto.images[0]} 
+                            title={producto.name} 
                         />
                     ) )
                 }

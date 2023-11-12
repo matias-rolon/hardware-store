@@ -1,0 +1,38 @@
+.button-modal {
+    outline: none;
+    border: none;
+    color: black;
+    width: 150px;
+}
+
+.contain-images {
+    display: flex;
+    overflow: auto;
+}
+
+.image-edit {
+    margin: 4px;
+    width: 150px;
+    height: auto;
+    display: block;
+}
+
+.input-image {
+    outline: none;
+    width: 100%;
+}
+
+.icon-edit-image {
+    cursor: pointer;
+    display: inline-flex; /* Cambio a inline-flex */
+    padding: 3px;
+    &:hover {
+        border-radius: 100%;
+        background-color: #cdcdcd;
+    }
+}
+
+.contain-button-edit {
+    text-align: center;
+    justify-content: center; /* Centrar horizontalmente */
+}

@@ -1,7 +1,7 @@
 import './styles/tableDetails.css'
 
 interface Props {
-    sectionDetails: Details[]
+    sectionDetails?: Details[]
 }
 
 interface Details {
@@ -14,7 +14,7 @@ export const TableDetailsProduct = ({sectionDetails} : Props) => {
         <table>
             <tbody> 
                 {
-                    sectionDetails.map((detail, index) => (
+                    sectionDetails?.map((detail, index) => (
                         <tr key={index}
                             className={
                                 index % 2 === 0 ? 'table-row-odd' : 'table-row-even'

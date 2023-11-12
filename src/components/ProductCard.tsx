@@ -4,7 +4,7 @@ import './styles/productCard.css'
 interface Props {
     img: string;
     title: string;
-    price: number
+    price: string
 }
 
 export const ProductCard = ({img, price, title}:Props) => {
@@ -13,7 +13,7 @@ export const ProductCard = ({img, price, title}:Props) => {
 
     return (
         <>
-            <div className='product-card' onClick={ () => navigation('/infoProduct') }>
+            <div className='product-card' onClick={ () => navigation(`/product/${title}`) }>
                 <div className="contain-image">
                     <img className='product-image' src={img} alt=""/>
                 </div>

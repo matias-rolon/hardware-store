@@ -33,7 +33,6 @@
 }
 
 .detials-product {
-    
     padding: 10px;
 }
 
@@ -100,20 +99,33 @@
         background-color: rgba(0, 0, 0, 0.1);
     }
 }
-
-
 .button-buy {
     margin-left: 10px;
     border-radius: 100px;
     padding: 15px 20px;
-    background-color: #c01c24;
+    background-color: #2e76b2;
     border: none;
     color: #ffffff;
     font-size: 100%;
     font-weight: 600;
     transition: 0.5s;
     &:hover {
-        background-color: #83151a;
+        background-color: #2e36b2;
+    }
+}
+
+.button-favorite{
+    margin-left: 10px;
+    border-radius: 100px;
+    padding: 15px 20px;
+    border: none;
+    background-color: #ffffff;
+    color: #2e76b2;
+    font-size: 100%;
+    font-weight: 600;
+    transition: 0.5s;
+    &:hover {
+        color: #2e36b2;
     }
 }
 
