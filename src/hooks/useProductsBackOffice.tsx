@@ -18,15 +18,16 @@ export function useProductsBackOffice() {
 
     const getProducts = async() => {
         const data = await getDocs(productsCollection);
-        console.log(data.docs.map( (doc) => ({...doc.data(), id:doc.id})))
-        setProducts(data.docs.map( (doc) => ({...doc.data(), id:doc.id})))
+        setProducts(data.docs.map( (doc) => ({...doc.data(), id:doc.id})) as Product[])
     }
 
     const [searchTerm, setSearchTerm] = useState(''); 
 
-    const handleSearchChange = (e:any) => {
-        setSearchTerm(e.target.value.document);
+    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        // Accede directamente a e.target.value sin verificar por undefined
+        setSearchTerm(e.target.value);
     };
+    
     
     const filteredProducts = products.filter((product) => {
         return product.name.toLowerCase().includes(searchTerm.toLowerCase());
@@ -54,6 +55,7 @@ export function useProductsBackOffice() {
         updatedProducts.push(newProduct);
         setProducts(updatedProducts);
         await addDoc(productsCollection, newProduct);
+        getProducts();
     }
 
 

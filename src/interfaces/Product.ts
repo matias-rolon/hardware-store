@@ -9,4 +9,5 @@ export interface Product {
     time?: number;
     images: string[];
     description: Description[];
+    [x: string]: any;
 }
