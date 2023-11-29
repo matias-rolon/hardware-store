@@ -40,11 +40,11 @@ export const Navbar = () => {
                         <p>Urgencias</p>
                         
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <NavDropdown name='Nosotros'/>
-                            <NavDropdown name='Catalogo'/>
-                            <NavDropdown name='Servicios' dropdown={[]}/>
-                            <NavDropdown name='Consultas' dropdown={[]}/>
-                            <NavDropdown name='Contacto' dropdown={[]}/>
+                            <NavDropdown name='Nosotros' href='#'/>
+                            <NavDropdown name='Catalogo' href='/catalogo'/>
+                            <NavDropdown name='Servicios' dropdown={[]} href='#'/>
+                            <NavDropdown name='Consultas' dropdown={[]} href='#'/>
+                            <NavDropdown name='Contacto' dropdown={[]} href='#'/>
                         </ul>
                         <div className='search-responsive'>
                             <SearchNav/>
@@ -55,11 +55,12 @@ export const Navbar = () => {
                 </div>
             </nav>
             <div className="sections">
-                <NavDropdown name='Nosotros'/>
-                <NavDropdown name='Catalogo'/>
-                <NavDropdown name='Servicios' dropdown={[]}/>
-                <NavDropdown name='Consultas' dropdown={[]}/>
-                <NavDropdown name='Contacto' dropdown={[]}/>
+                <NavDropdown name='Nosotros' href='#'/>
+                <NavDropdown name='Catalogo' href="/catalogo"/>
+                <a href="/catalogo">catalogo</a>
+                <NavDropdown name='Servicios' dropdown={[]} href='#'/>
+                <NavDropdown name='Consultas' dropdown={[]} href='#'/>
+                <NavDropdown name='Contacto' dropdown={[]} href='#'/>
             </div>
         </>
     )
