@@ -4,14 +4,24 @@ import { useProductsBackOffice } from "../hooks/useProductsBackOffice";
 import { useEffect } from 'react';
 import './styles/inventory.css'
 
-export const Inventory = () => {
+import { useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 
-  const { products, getProducts } = useProductsBackOffice()
+export const Inventory = () => {
+  const { products, getProducts } = useProductsBackOffice();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getProducts();
-  }, [])
+    const fetchData = async () => {
+      try {
+        await getProducts();
+      } finally {
+        setLoading(false);
+      }
+    };
 
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -27,7 +37,11 @@ export const Inventory = () => {
           </ul>
         </div>
         <div className="products">
-          {
+          {loading ? (
+            <div className='container-spinner'>
+              <Spinner/>
+            </div>
+          ) : (
             products.map(producto => (
               <ProductCard
                 key={producto.id}
@@ -36,9 +50,9 @@ export const Inventory = () => {
                 title={producto.name}
               />
             ))
-          }
+          )}
         </div>
       </div>
     </>
-  )
-}
+  );
+};
