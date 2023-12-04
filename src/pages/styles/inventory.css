@@ -1,0 +1,16 @@
+.contain-inventory {
+    background-color: #ebebeb;
+    display: flex;
+}
+
+.category{
+    padding: 10px;
+}
+
+.products{
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}

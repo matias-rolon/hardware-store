@@ -40,7 +40,7 @@ export const Navbar = () => {
                         <p>Urgencias</p>
                         
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <NavDropdown name='Nosotros' href='#'/>
+                            <NavDropdown name='Nosotros' href='/'/>
                             <NavDropdown name='Catalogo' href='/catalogo'/>
                             <NavDropdown name='Servicios' dropdown={[]} href='#'/>
                             <NavDropdown name='Consultas' dropdown={[]} href='#'/>
@@ -55,7 +55,7 @@ export const Navbar = () => {
                 </div>
             </nav>
             <div className="sections">
-                <NavDropdown name='Nosotros' href='#'/>
+                <NavDropdown name='Nosotros' href='/'/>
                 <NavDropdown name='Catalogo' href="/catalogo"/>
                 <NavDropdown name='Servicios' dropdown={[]} href='#'/>
                 <NavDropdown name='Consultas' dropdown={[]} href='#'/>

@@ -34,6 +34,7 @@ export const NavDropdown = ({ name, dropdown, href }: Props) => {
             className={`nav-link nav-link-nav ${dropdown ? 'dropdown-toggle' : ''}`}
             id="navbarDropdown"
             role="button"
+            data-bs-toggle={dropdown ? "dropdown" : undefined}
             aria-expanded="false"
           >
             {name}
