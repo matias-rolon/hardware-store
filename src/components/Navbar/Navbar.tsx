@@ -57,7 +57,6 @@ export const Navbar = () => {
             <div className="sections">
                 <NavDropdown name='Nosotros' href='#'/>
                 <NavDropdown name='Catalogo' href="/catalogo"/>
-                <a href="/catalogo">catalogo</a>
                 <NavDropdown name='Servicios' dropdown={[]} href='#'/>
                 <NavDropdown name='Consultas' dropdown={[]} href='#'/>
                 <NavDropdown name='Contacto' dropdown={[]} href='#'/>

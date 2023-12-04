@@ -22,20 +22,18 @@ interface Section {
 
 export const NavDropdown = ({ name, dropdown, href }: Props) => {
     const handleItemClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-      // Evitar la propagación del evento al contenedor de la marca de navegación
       event.stopPropagation();
     };
   
     return (
       <>
-        <li className="nav-item nav-item-nav dropdown dropdown-nav">
+        <li className="nav-item nav-item-nav dropdown dropdown-nav" onClick={() => console.log("Hola")}>
           <a
             href={href}
             onClick={handleItemClick}
             className={`nav-link nav-link-nav ${dropdown ? 'dropdown-toggle' : ''}`}
             id="navbarDropdown"
             role="button"
-            data-bs-toggle="dropdown"
             aria-expanded="false"
           >
             {name}
