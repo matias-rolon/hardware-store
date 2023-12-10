@@ -5,6 +5,7 @@
 
 .category{
     padding: 10px;
+    display: block;
 }
 
 .products{
@@ -13,6 +14,7 @@
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 .container-spinner {
@@ -20,4 +22,11 @@
     height: 100%;
     justify-content: center;
     align-items: center;
+}
+
+
+@media (max-width: 535px) {
+    .contain-inventory {
+        display: block;
+    }
 }

@@ -6,6 +6,7 @@ import './styles/inventory.css'
 
 import { useState } from 'react';
 import { Spinner } from 'react-bootstrap';
+import { FilterInventory } from '../components/FilterInventory';
 
 export const Inventory = () => {
   const { products, getProducts } = useProductsBackOffice();
@@ -27,14 +28,9 @@ export const Inventory = () => {
     <>
       <Navbar />
       <div className='contain-inventory'>
+        
         <div className='category'>
-          <h5>Categorías</h5>
-          <ul>
-            <li>Buloneria</li>
-            <li>Herrería</li>
-            <li>Electricidad</li>
-            <li>Seguridad</li>
-          </ul>
+          <FilterInventory/>
         </div>
         <div className="products">
           {loading ? (

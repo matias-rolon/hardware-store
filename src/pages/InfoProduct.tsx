@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { Navbar } from "../components/Navbar/Navbar";
 import { ImageSelector } from "../components/ImageSelector";
 import { TableDetailsProduct } from "../components/TableDetailsProduct";
-import { Products } from "../data/products";
 import "./styles/infoProduct.css";
 import { useProductsBackOffice } from "../hooks/useProductsBackOffice";
 import { useEffect } from "react";
