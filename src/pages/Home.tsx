@@ -1,29 +1,21 @@
-import {ProductCard} from '../components/ProductCard'
 import {Carousel} from '../components/Carousel'
 import {Navbar} from '../components/Navbar/Navbar'
 import './styles/home.css'
 
-import { Products } from "../data/products";
-
 export const Home = () => {
 
-    const { products } = Products()
+    
 
     return (
-        <div className='contain-page'>
+        <div className='contain-page'>  
             <Navbar/>
             <Carousel/>
-            <div className="productos">                
-                {
-                    products.map( producto => (
-                        <ProductCard
-                            key={producto.id}
-                            price={producto.price} 
-                            img={producto.images[0]} 
-                            title={producto.name} 
-                        />
-                    ) )
-                }
+            <div className='contain-about-us'>
+                <h2>¡Acerca de nosotros!</h2>
+                <p>AMK surge para posicionarse como la ferretería de confianza de la industria. Ofrecemos 
+                    soluciones personalizadas y productos de calidad para tus proyectos y todo el desarrollo de tus actividades. Nuestro equipo 
+                    capacitado está listo para brindarte asesoramiento y servicio excepcional. </p>
+                    <p>En AMK creemos que la velocidad y calidad de las respuestas son pilares que hacen más llevaderas los procesos.</p>
             </div>
 
         </div>

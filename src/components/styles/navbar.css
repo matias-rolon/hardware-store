@@ -8,6 +8,14 @@
     top: 0;
 }
 
+.container-fluid-home{
+    background-color: #fff;
+}
+
+.img-logo {
+    margin-top: -20px;
+    max-width: 230px;
+}
 
 .search {
     width: 500px;
@@ -97,6 +105,15 @@
         color: #4b71be;
     }
 }
+
+.search-pc{
+    margin-left: -10px;
+}
+
+.search-responsive{
+    display: none;
+}
+
 @media only screen and (max-width: 991px) {
     .search{
         width: 100% !important;
@@ -123,5 +140,20 @@
 @media only screen and (max-width: 1220px) {
     .search{
         width: 500px;
+    }
+}
+
+@media (max-width: 350px) {
+    .img-logo{
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 600px) {
+    .search-pc{
+        display: none;
+    }
+    .search-responsive{
+        display: block;
     }
 }

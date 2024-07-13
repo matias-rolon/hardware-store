@@ -4,10 +4,9 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import '../styles/navbar.css';
 
 import { useNavigate } from 'react-router-dom';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import {NavDropdown} from './NavDropdown';
 import {SearchNav} from './SearchNav';
+import logo from "../../assets/logo.jpg";
 
 
 export const Navbar = () => {
@@ -16,33 +15,51 @@ export const Navbar = () => {
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg">
-                <div className="container-fluid">
-                    <div className="navbar-brand-container" onClick={ () => navigation('/') }>
-                        <a className="navbar-brand logo" href="#">AMK SRL</a>
-                        <p className="navbar-brand subtext with-line">FERRETERIA Y SEGURIDAD INDUSTRIAL</p>
+            <nav className="navbar bg-body-tertiary fixed-top">
+                <div className="container-fluid container-fluid-home">
+                <div className="navbar-brand-container" onClick={ () => navigation('/') }>
+                        <img src={logo} className="img-logo" alt="" />
                     </div>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <div className='search-pc'>
+                        <SearchNav/>
+                    </div>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    
+                    <div className="offcanvas offcanvas-end" tabIndex={-1} id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                        <div className="offcanvas-header">
+                        <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+                        <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    
+
+                    <div className="offcanvas-body">
+                        <p>Pedidos especiales</p>
+                        <p>Pedidos encargo</p>
+                        <p>Urgencias</p>
+                        
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                            <NavDropdown name='Home'/>
-                            <NavDropdown name='Contactanos'/>
-                            <NavDropdown name='Variable_def_1' dropdown={[]}/>
-                            <NavDropdown name='Variable_def_2' dropdown={[]}/>
+                            <NavDropdown name='Nosotros' href='/'/>
+                            <NavDropdown name='Catalogo' href='/catalogo'/>
+                            <NavDropdown name='Servicios' dropdown={[]} href='#'/>
+                            <NavDropdown name='Consultas' dropdown={[]} href='#'/>
+                            <NavDropdown name='Contacto' dropdown={[]} href='#'/>
                         </ul>
-                        <SearchNav/>
-                        <ShoppingCartOutlinedIcon className='icon-shop'/>
-                        <BookmarkBorderIcon className='icon-favorites' />
+                        <div className='search-responsive'>
+                            <SearchNav/>
+                        </div>
+                    </div>
+                    
                     </div>
                 </div>
             </nav>
             <div className="sections">
-                <NavDropdown name='Home'/>
-                <NavDropdown name='Contactanos'/>
-                <NavDropdown name='Variable_def_1' dropdown={[]}/>
-                <NavDropdown name='Variable_def_2' dropdown={[]}/>
+                <NavDropdown name='Nosotros' href='/'/>
+                <NavDropdown name='Catalogo' href="/catalogo"/>
+                <NavDropdown name='Servicios' dropdown={[]} href='#'/>
+                <NavDropdown name='Consultas' dropdown={[]} href='#'/>
+                <NavDropdown name='Contacto' dropdown={[]} href='#'/>
             </div>
         </>
     )

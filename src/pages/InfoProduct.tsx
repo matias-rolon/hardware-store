@@ -2,15 +2,22 @@ import { useParams } from "react-router-dom";
 import { Navbar } from "../components/Navbar/Navbar";
 import { ImageSelector } from "../components/ImageSelector";
 import { TableDetailsProduct } from "../components/TableDetailsProduct";
-import { Products } from "../data/products";
 import "./styles/infoProduct.css";
+import { useProductsBackOffice } from "../hooks/useProductsBackOffice";
+import { useEffect } from "react";
 export const InfoProduct = () => {
     
     const productId = useParams().productId;
 
-    const {products} = Products()
+    const {products, getProducts} = useProductsBackOffice()
+
 
     const product = products.find(product => product.name === productId);
+
+    useEffect(() => {
+        getProducts();
+      }, [])
+
 
     return (
         <>

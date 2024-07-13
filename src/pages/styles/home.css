@@ -13,3 +13,26 @@
   flex-wrap: wrap;
 
 }
+
+.contain-about-us{
+  padding-left: 250px;
+  padding-right: 250px;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 23px;
+}
+
+@media (max-width: 1115px) {
+  .contain-about-us{
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .contain-about-us{
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 15px;
+  }
+}
